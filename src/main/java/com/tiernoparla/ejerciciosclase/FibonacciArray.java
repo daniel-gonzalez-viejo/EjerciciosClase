@@ -10,7 +10,7 @@ public class FibonacciArray {
         int [] ejemplos = {1, 1, 0, 7};
         
         
-        for (int i = 3; i <= ejemplos[3]; i++) {
+        for (int i = 0; i <= ejemplos[3]; i++) {
             ejemplos[2] = ejemplos[1] + ejemplos[0];
             ejemplos[0] = ejemplos[1];
             ejemplos[1] = ejemplos[2];
