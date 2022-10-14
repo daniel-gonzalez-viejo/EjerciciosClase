@@ -3,7 +3,7 @@ package com.tiernoparla.ejerciciosclase;
 public class ContarVocalesString {
 public static void main(String[] args){
         
-        String srt = "magico";
+        String srt = "magicoamente";
         
         int Vocales = 0;
         
