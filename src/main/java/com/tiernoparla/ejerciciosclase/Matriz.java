@@ -6,7 +6,7 @@ public class Matriz {
         
         for (int x = 0; x < matriz.length; x++) {
             for (int y = 0; y < matriz[x].length; y++) {
-                matriz[x][y] = (int) (Math.random()*2);
+                matriz[x][y] = (int) (Math.random()*3);
                 System.out.print(matriz [x][y]);
             } //for
             System.out.println();
