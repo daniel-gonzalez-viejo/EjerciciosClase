@@ -3,21 +3,24 @@ package com.tiernoparla.ejerciciosclase;
 public class Password {
     public static void main(String[] args) {
         
-        String str = "magicamente10";
+        String str = "magicamente98";
         int lon = 10;
+        int counter = 0;
+
         // NO ESTÁ ACABADO
-        if (str.length() < lon && str.substring(1, 10).matches("[a-z]*") && str.substring(1, 10).matches("[0-9]*")){
+        if (str.length() > lon){ // La expresión ("[a-zA-Z0-9]*") sirve para alcanzar todos los caracteres alfanumericos
             System.out.println("La contraseña es correcta1");
-        }//if
-        /*else if (str.substring(0, 3).matches("[A-Z]*")){
+        } //if
+        if (str.matches("[a-zA-Z0-9]*")) {
             System.out.println("La contraseña es correcta2");
-        } // else if
-        else if (str.substring(0, 3).matches("[0-9]*")){
+        } //if
+        for (char c: str.toCharArray()){
+            if (Character.isDigit(c)){
+                counter++;
+            } //if
+        } //for
+        if (counter >= 2){
             System.out.println("La contraseña es correcta3");
-        } // else if
-        */
-        else{
-            System.out.println("La contraseña no es correcta");
-        } //else
+        } //if
     } //main
 } //all
