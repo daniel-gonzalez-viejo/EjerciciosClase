@@ -22,4 +22,8 @@ public class Arrays {
             System.out.println(palabras[i]);
         }
     } //main
+
+    static boolean toString(int[] arr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } //Arrays
