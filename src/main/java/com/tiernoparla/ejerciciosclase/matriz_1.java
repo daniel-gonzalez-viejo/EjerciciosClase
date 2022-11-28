@@ -9,10 +9,6 @@ package com.tiernoparla.ejerciciosclase;
  *
  * @author Dani
  */
-class math {
-
-    static int random() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+class matriz {
     
 }
