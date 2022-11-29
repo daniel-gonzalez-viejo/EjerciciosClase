@@ -44,6 +44,7 @@ public class ESAMEN {
 
     public static boolean saberQuienHaGanado(int[] tabla, final int ORDENADOR, 
             final int USUARIO, boolean ganador) {
+        int contador = 0;
         final String JUGADOR_ORDENADOR = "Ordenador";
         final String JUGADOR_USUARIO = "Usuario";
         System.out.println("");
@@ -58,7 +59,17 @@ public class ESAMEN {
                     else {
                         System.out.println("Ha ganado el jugador " 
                             + JUGADOR_USUARIO);
-                    }
+                    } //else
+                    ganador = false;
+                    break;
+                } //if
+            } //if
+        } //for
+        for (int i = 0; i < tabla.length; i++) {
+            if (tabla[i] == ORDENADOR || tabla[i] == USUARIO) {
+                contador++;
+                if (contador == tabla.length) {
+                    System.out.println("Ha habido un empate");
                     ganador = false;
                     break;
                 } //if
