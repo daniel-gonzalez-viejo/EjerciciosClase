@@ -208,7 +208,7 @@ public class PRACTICA {
         int index = 0;
 
         int sum = 0;
-        int N = (int) (Math.sqrt(A));
+        final int N = (int) (Math.sqrt(A));
         int pot = 1;
         int M = 0;
         int z = 0;
