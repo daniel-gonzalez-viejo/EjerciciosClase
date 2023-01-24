@@ -1,4 +1,4 @@
-package ClasesGeom;
+package ClasesParaUsar;
 
 public class Cilindro {
     //atr
