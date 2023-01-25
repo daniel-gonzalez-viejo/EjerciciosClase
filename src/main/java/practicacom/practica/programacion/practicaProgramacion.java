@@ -11,7 +11,10 @@ public class practicaProgramacion {
         darDeAltaUnaObraDeArte art = new darDeAltaUnaObraDeArte(1, "Cuadro", "Cuadro de mariposas", "Van Gogh", 
         4, 5, 2, null, "oleo", 1, "Un cuadro mu feo");
 
-        int n = 2;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("¿Qué quieres hacer");
+        System.out.println("1. Visualizar obras de arte");
+        int n = sc.nextInt();
 
         switch (n){
             case 1: {
