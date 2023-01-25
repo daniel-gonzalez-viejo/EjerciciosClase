@@ -1,7 +1,7 @@
 package practicacom.practica.programacion.clasesMuseo;
 
 public class darDeAltaUnaObraDeArte {
-    private int ID;
+    private int ID = 6;
     private String Tipo;
     private String Nombre;
     private String Autor;
@@ -116,12 +116,18 @@ public class darDeAltaUnaObraDeArte {
         Descripción = descripción;
     }
 
+    public String getCabeceros() {
+        return "ID" + "    " + "Tipo" + "   " + "Nombre" + "   " + "Autor"
+                    + "   " + "Precio" + "   " + "Altura" + "   " + "Peso" + "   " + "Material"
+                    + "   " + "Tecnica" + "   " + "Piezas" + "   " + "Descripción" + "";
+    }
+
     @Override
     public String toString() {
         return ID + "    " + Tipo + "   " + Nombre + "   " + Autor
                 + "   " + Precio + "   " + Altura + "   " + Peso + "   " + Material
-                + "   " + Tecnica + "   " + Piezas + "   " + Descripción + " s]";
-    }
+                + "   " + Tecnica + "   " + Piezas + "   " + Descripción + "";}
+    
     
 
     
