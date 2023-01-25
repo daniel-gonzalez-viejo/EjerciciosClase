@@ -115,7 +115,13 @@ public class darDeAltaUnaObraDeArte {
     public void setDescripción(String descripción) {
         Descripción = descripción;
     }
-    
+
+    @Override
+    public String toString() {
+        return ID + "    " + Tipo + "   " + Nombre + "   " + Autor
+                + "   " + Precio + "   " + Altura + "   " + Peso + "   " + Material
+                + "   " + Tecnica + "   " + Piezas + "   " + Descripción + " s]";
+    }
     
 
     
