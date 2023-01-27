@@ -1,5 +1,8 @@
 package practicacom.practica.programacion.clasesMuseo;
 
+import java.util.*;
+import java.util.Scanner;
+
 public class darDeAltaUnaObraDeArte {
     private int ID = 6;
     private String Tipo;
@@ -13,8 +16,12 @@ public class darDeAltaUnaObraDeArte {
     private int Piezas;
     private String Descripción;
 
+    Vector v = new Vector<>(10);
+    Scanner sc = new Scanner(System.in);
+
     public darDeAltaUnaObraDeArte(int iD, String tipo, String nombre, String autor, double precio, int altura, int peso,
             String material, String tecnica, int piezas, String descripción) {
+                ;
         ID = iD;
         Tipo = tipo;
         Nombre = nombre;
@@ -114,6 +121,32 @@ public class darDeAltaUnaObraDeArte {
 
     public void setDescripción(String descripción) {
         Descripción = descripción;
+    }
+
+    public void darDeAlta(int iD, String tipo, String nombre, String autor, double precio, int altura, int peso,
+    String material, String tecnica, int piezas, String descripción) {
+        System.out.println("ID: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Tipo: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Nombre: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Autor: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Precio: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Altura: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Peso: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Material: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Técnica: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Piezas: ");
+        v.addElement(sc.nextLine());
+        System.out.println("Descripción ");
+        v.addElement(sc.nextLine());
     }
 
     public String getCabeceros() {
