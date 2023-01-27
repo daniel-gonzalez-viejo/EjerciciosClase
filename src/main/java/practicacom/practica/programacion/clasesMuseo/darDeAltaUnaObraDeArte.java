@@ -117,16 +117,16 @@ public class darDeAltaUnaObraDeArte {
     }
 
     public String getCabeceros() {
-        return "ID" + "    " + "Tipo" + "   " + "Nombre" + "   " + "Autor"
-                    + "   " + "Precio" + "   " + "Altura" + "   " + "Peso" + "   " + "Material"
-                    + "   " + "Tecnica" + "   " + "Piezas" + "   " + "Descripción" + "";
+        return "ID" + "    " + "Tipo" + "       " + "Nombre" + "      " + "Autor"
+                    + "     " + "Precio" + "     " + "Altura" + "     " + "Peso" + "     " + "Material"
+                    + "     " + "Tecnica" + "     " + "Piezas" + "     " + "Descripción" + "";
     }
 
     @Override
     public String toString() {
-        return ID + "    " + Tipo + "   " + Nombre + "   " + Autor
-                + "   " + Precio + "   " + Altura + "   " + Peso + "   " + Material
-                + "   " + Tecnica + "   " + Piezas + "   " + Descripción + "";}
+        return ID + "     " + Tipo + "     " + Nombre + "     " + Autor
+                + "     " + Precio + "     " + Altura + "     " + Peso + "     " + Material
+                + "     " + Tecnica + "     " + Piezas + "     " + Descripción + "";}
     
     
 
