@@ -1,25 +1,25 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-import java.util.*;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class darDeAltaUnaObraDeArte {
-    private int ID = 6;
+    private String ID = "6";
     private String Tipo;
     private String Nombre;
     private String Autor;
     private double Precio;
-    private int Altura;
-    private int Peso;
+    private double Altura;
+    private double Peso;
     private String Material;
     private String Tecnica;
     private int Piezas;
     private String Descripción;
+    private Vector v = new Vector<>(10);
 
-    Vector v = new Vector<>(10);
     Scanner sc = new Scanner(System.in);
 
-    public darDeAltaUnaObraDeArte(int iD, String tipo, String nombre, String autor, double precio, int altura, int peso,
+    public darDeAltaUnaObraDeArte(String iD, String tipo, String nombre, String autor, double precio, double altura, double peso,
             String material, String tecnica, int piezas, String descripción) {
                 ;
         ID = iD;
@@ -35,11 +35,13 @@ public class darDeAltaUnaObraDeArte {
         Descripción = descripción;
     }
 
-    public int getID() {
+    public darDeAltaUnaObraDeArte(){};
+
+    public String getID() {
         return ID;
     }
 
-    public void setID(int iD) {
+    public void setID(String iD) {
         ID = iD;
     }
 
@@ -75,19 +77,19 @@ public class darDeAltaUnaObraDeArte {
         Precio = precio;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return Altura;
     }
 
-    public void setAltura(int altura) {
+    public void setAltura(double altura) {
         Altura = altura;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return Peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         Peso = peso;
     }
 
@@ -123,30 +125,29 @@ public class darDeAltaUnaObraDeArte {
         Descripción = descripción;
     }
 
-    public void darDeAlta(int iD, String tipo, String nombre, String autor, double precio, int altura, int peso,
-    String material, String tecnica, int piezas, String descripción) {
+    public void darDeAlta() {
         System.out.println("ID: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 1);
         System.out.println("Tipo: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 2);
         System.out.println("Nombre: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 3);
         System.out.println("Autor: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 4);
         System.out.println("Precio: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextDouble(), 5);
         System.out.println("Altura: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextInt(), 6);
         System.out.println("Peso: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextInt(), 7);
         System.out.println("Material: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 8);
         System.out.println("Técnica: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 9);
         System.out.println("Piezas: ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 10);
         System.out.println("Descripción ");
-        v.addElement(sc.nextLine());
+        v.insertElementAt(sc.nextLine(), 11);
     }
 
     public String getCabeceros() {
