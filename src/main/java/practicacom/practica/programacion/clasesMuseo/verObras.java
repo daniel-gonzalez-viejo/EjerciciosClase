@@ -1,6 +1,4 @@
 package practicacom.practica.programacion.clasesMuseo;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class verObras {
 
@@ -35,6 +33,11 @@ public class verObras {
     public verObras() {
     }
 
+    public String Cabeceras() {
+        return "ID" + "    " + "Tipo" + "        " + "Nombre" + "            " + "Autor" + "       " + "Precio" + "   "
+         + "Alt." + "  " + "Peso"        + "  " + "Mat." + "  " + "Técnica" + "     " + "Piezas" + "       " + "Descripción";
+    }
+
     public void verLasObras(){
         objeto[0] = new verObras(ID = "001", "Pintura", "  Guernica","       P.Picasso", 1000,5, 2,   null,  "Óleo", 5, "Cuadro de la guerra civil");        objeto[1] = new verObras("002", "Pintura", "  La Vie", "         P.Picasso", 200,  5, 1,   null,  "Óleo", 5, "Óleo");
         objeto[1] = new verObras(ID = "002", "Pintura", "  La Vie", "         P.Picasso", 200,  5, 1,   null,  "Óleo", 5, "Óleo");
@@ -54,10 +57,94 @@ public class verObras {
 
     }
 
-    public String Cabeceras() {
-        return "ID" + "    " + "Tipo" + "        " + "Nombre" + "            " + "Autor" + "       " + "Precio" + "   "
-         + "Alt." + "  " + "Peso"        + "  " + "Mat." + "  " + "Técnica" + "     " + "Piezas" + "       " + "Descripción";
+    public String getID() {
+        return ID;
     }
+
+    public void setID(String iD) {
+        ID = iD;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public void setTipo(String tipo) {
+        Tipo = tipo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getAutor() {
+        return Autor;
+    }
+
+    public void setAutor(String autor) {
+        Autor = autor;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double precio) {
+        Precio = precio;
+    }
+
+    public double getAltura() {
+        return Altura;
+    }
+
+    public void setAltura(double altura) {
+        Altura = altura;
+    }
+
+    public double getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(double peso) {
+        Peso = peso;
+    }
+
+    public String getMaterial() {
+        return Material;
+    }
+
+    public void setMaterial(String material) {
+        Material = material;
+    }
+
+    public String getTecnica() {
+        return Técnica;
+    }
+
+    public void setTecnica(String tecnica) {
+        Técnica = tecnica;
+    }
+
+    public int getPiezas() {
+        return Piezas;
+    }
+
+    public void setPiezas(int piezas) {
+        Piezas = piezas;
+    }
+
+    public String getDescripción() {
+        return Descripción;
+    }
+
+    public void setDescripción(String descripción) {
+        Descripción = descripción;
+    }
+
 
     @Override
     public String toString() {
