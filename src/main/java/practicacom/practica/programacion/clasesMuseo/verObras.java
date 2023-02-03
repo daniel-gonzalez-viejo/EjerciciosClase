@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class verObras {
 
-    public Vector[] objeto2 = new Vector[40];
+    public Vector[] objeto2 = new Vector[4];
     private String ID;
     private String Tipo;
     private String Nombre;
@@ -16,6 +16,7 @@ public class verObras {
     private String Técnica;
     private int Piezas;
     private String Descripción;
+    Vector objeto = new Vector();
     
     public verObras(String iD, String tipo, String nombre, String autor, double precio,
             double altura, double peso, String material, String técnica, int piezas, String descripción) {
@@ -36,42 +37,31 @@ public class verObras {
     public verObras() {
     }
 
+
     public String Cabeceras() {
         return "ID" + "    " + "Tipo" + "        " + "Nombre" + "            " + "Autor" + "       " + "Precio" + "   "
          + "Alt." + "  " + "Peso"        + "  " + "Mat." + "  " + "Técnica" + "     " + "Piezas" + "       " + "Descripción";
     }
 
+    public Vector obrasDeArte(Vector objeto) {
+        objeto.addElement("001" + "   Pintura"+ "     Guernica"+ "          P.Picasso" + "   1000" + "     5" + "     2" +   "null"+   "Óleo" + 5 + "Cuadro de la guerra civil");
+        objeto.addElement("002" + "   Pintura"+ "     La Vie"+ "            P.Picasso" + "   200" +  "      5" + "     1" +   "null"+   "Óleo" + 5 + "Óleo");
+        objeto.addElement("003" + "   Pintura"+ "     El Sueño"+ "          P.Picasso" + "   300" +  "      5" + "     1.3" + "null"+   "Óleo" + 5 + "Óleo");
+        objeto.addElement("004" + "   Pintura"+ "     Retrato.D Maar"+ "    P.Picasso" + "   400" +  "      5" + "     1" +   "null"+   "Óleo" + 5 + "Óleo");
+        objeto.addElement("005" + "   Escultura"+ "   El piel roja"+ "      U.Chueca" + "    350" +  "      5" + "     1" +  "acero" + null +  5 + "Escultura");
+
+        return objeto;
+
+    }
+
     public void verLasObras(){
-        Vector objeto2 = new Vector();
-        objeto2.addElement("001" + "   Pintura"+ "     Guernica"+ "          P.Picasso" + "   1000" + "     5" + "     2" +   "null"+   "Óleo" + 5 + "Cuadro de la guerra civil");
-        objeto2.addElement("002" + "   Pintura"+ "     La Vie"+ "            P.Picasso" + "   200" +  "      5" + "     1" +   "null"+   "Óleo" + 5 + "Óleo");
-        objeto2.addElement("003" + "   Pintura"+ "     El Sueño"+ "          P.Picasso" + "   300" +  "      5" + "     1.3" + "null"+   "Óleo" + 5 + "Óleo");
-        objeto2.addElement("004" + "   Pintura"+ "     Retrato.D Maar"+ "    P.Picasso" + "   400" +  "      5" + "     1" +   "null"+   "Óleo" + 5 + "Óleo");
-        objeto2.addElement("005" + "   Escultura"+ "   El piel roja"+ "      U.Chueca" + "    350" +  "      5" + "     1" +  "acero" + null +  5 + "Escultura");
-
-
-       /*  objeto[0] = new verObras(ID = "001", "Pintura", "  Guernica","       P.Picasso", 1000,5, 2,   null,  "Óleo", 5, "Cuadro de la guerra civil");
-        objeto[1] = new verObras(ID = "002", "Pintura", "  La Vie", "         P.Picasso", 200,  5, 1,   null,  "Óleo", 5, "Óleo");
-        objeto[2] = new verObras(ID = "003", "Pintura", "  El Sueño", "       P.Picasso", 300,  5, 1.3, null,  "Óleo", 5, "Óleo");
-        objeto[3] = new verObras(ID = "004", "Pintura", "  Retrato.D Maar", " P.Picasso", 400,  5, 1,   null,  "Óleo", 5, "Óleo");
-        objeto[4] = new verObras(ID = "005", "Escultura", "El piel roja", "   U.Chueca",  350,  5, 1,  "acero", null,  5, "Escultura");
-        */
         System.out.println("-------------------------------------------------------------------------------------------------------");
         System.out.println(Cabeceras());
+        obrasDeArte(objeto);
 
-        /* 
-        for(int i = 0; i < objeto.length; i++) {
-            if (objeto[i] == null) {
-                break;
-            }
-            System.out.println(objeto[i].toString());
+        for(int i = 0; i < objeto.size(); i++) {
+            System.out.println(objeto.elementAt(i)+"\t");
         }
-        */
-
-        for(int i = 0; i < objeto2.size(); i++) {
-            System.out.println(objeto2.elementAt(i)+"\t");
-        }
-
     }
 
     public String getID() {
@@ -160,6 +150,14 @@ public class verObras {
 
     public void setDescripción(String descripción) {
         Descripción = descripción;
+    }
+
+    public Vector[] getObjeto2() {
+        return objeto2;
+    }
+
+    public void setObjeto2(Vector[] objeto2) {
+        objeto2 = objeto2;
     }
 
 
