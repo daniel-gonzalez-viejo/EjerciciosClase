@@ -66,9 +66,14 @@ public class abrirMenu {
                 obras aux = Pa.buscar(mod.getCed());
                 mod.modificar(aux);
                 break;
-            } /*
+            } 
             case 4: {
-            }
+                visualizarDatos vis = new visualizarDatos();
+                vis.pedirObra();
+                obras aux = Pa.buscar(vis.getCed());
+                vis.mostrarDatos(aux);
+
+            }/*
             case 5: {
             }
             case 6: {
