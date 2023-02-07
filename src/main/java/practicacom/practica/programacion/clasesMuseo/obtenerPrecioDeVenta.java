@@ -1,7 +1,10 @@
 package practicacom.practica.programacion.clasesMuseo;
 
 public class obtenerPrecioDeVenta extends verObras{
-    
+
+    public obtenerPrecioDeVenta() {
+    }
+
     public void obtenerPrecio(obras aux) {
         if (aux != null) {
             double precioFinal;
