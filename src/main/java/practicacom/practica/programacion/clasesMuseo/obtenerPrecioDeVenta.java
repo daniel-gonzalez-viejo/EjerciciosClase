@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class obtenerPrecioDeVenta extends verObras{
+public class obtenerPrecioDeVenta extends modificarObra{
 
     public obtenerPrecioDeVenta() {
     }
