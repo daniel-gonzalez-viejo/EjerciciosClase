@@ -27,12 +27,8 @@ public class obras {
         this.Descripción = descripción;
     }
 
-
-    
     public obras() {
     }
-
-
 
     public String getID() {
         return ID;
