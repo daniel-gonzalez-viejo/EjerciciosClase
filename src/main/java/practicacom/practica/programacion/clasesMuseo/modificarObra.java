@@ -1,10 +1,7 @@
 package practicacom.practica.programacion.clasesMuseo;
 import java.util.Scanner;
 
-import javax.lang.model.type.NoType;
-
-import practicacom.practica.programacion.clasesMuseo.abrirMenu;
-public class modificarObra extends obras {
+public class modificarObra extends verObras {
 
     Scanner sc = new Scanner(System.in);
     String Ced;
@@ -22,7 +19,7 @@ public class modificarObra extends obras {
     }
 
     public void pedirObra() {
-        System.out.print("¿Qué obra quieres visualizar?");
+        System.out.print("¿Qué obra quieres visualizar?:  ");
         setCed(dd.nextLine());
     }
 
