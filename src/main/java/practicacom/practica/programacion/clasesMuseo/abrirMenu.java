@@ -73,7 +73,9 @@ public class abrirMenu {
             }
             case 5: {
                 obtenerPrecioDeVenta obt = new obtenerPrecioDeVenta();
-                obt.pedirO
+                obt.pedirObra();
+                obras aux = Pa.buscar(obt.getCed());
+                obt.obtenerPrecio(aux);
             }/*
             case 6: {
             }  
