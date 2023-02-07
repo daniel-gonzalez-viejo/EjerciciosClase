@@ -1,11 +1,15 @@
 package practicacom.practica.programacion.clasesMuseo;
+<<<<<<< HEAD
 import java.io.ObjectInputStream.GetField;
 
+=======
+>>>>>>> 495a01b (creo la clase visualizarDatos)
 
 public class visualizarDatos extends modificarObra {
 
     public visualizarDatos() {
     }
+<<<<<<< HEAD
 
     public void mostrarDatos(obras aux) {
         String nuevo;  
@@ -24,6 +28,8 @@ public class visualizarDatos extends modificarObra {
                 System.out.println("");
             } 
     }
+=======
+>>>>>>> 495a01b (creo la clase visualizarDatos)
     
     
 
