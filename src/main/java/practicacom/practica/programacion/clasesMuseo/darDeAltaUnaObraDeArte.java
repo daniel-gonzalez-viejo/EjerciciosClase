@@ -130,35 +130,32 @@ public class darDeAltaUnaObraDeArte{
     public void darDeAlta() {
         System.out.println("ID: ");
         setID(sc.nextLine());
-        
-        
-        /* 
         System.out.println("Tipo: ");
-        v.insertElementAt(sc.nextLine(), 2);
+        setTipo(sc.nextLine());
         System.out.println("Nombre: ");
-        v.insertElementAt(sc.nextLine(), 3);
+        setNombre(sc.nextLine());;
         System.out.println("Autor: ");
-        v.insertElementAt(sc.nextLine(), 4);
+        setAutor(sc.nextLine());
         System.out.println("Precio: ");
-        v.insertElementAt(sc.nextDouble(), 5);
+        setPrecio(sc.nextDouble());
         System.out.println("Altura: ");
-        v.insertElementAt(sc.nextInt(), 6);
+        setAltura(sc.nextDouble());
         System.out.println("Peso: ");
-        v.insertElementAt(sc.nextInt(), 7);
+        setAltura(sc.nextDouble());
         System.out.println("Material: ");
-        v.insertElementAt(sc.nextLine(), 8);
+        setMaterial(sc.nextLine());
         System.out.println("Técnica: ");
-        v.insertElementAt(sc.nextLine(), 9);
+        setTecnica(sc.nextLine());
         System.out.println("Piezas: ");
-        v.insertElementAt(sc.nextLine(), 10);
+        setPiezas(sc.nextInt());
         System.out.println("Descripción ");
-        v.insertElementAt(sc.nextLine(), 11);
-        */
+        setDescripción(sc.nextLine());
     }
 
     public obras nuevaObra() {
         darDeAlta();
-        obras P6 = new obras(getID() , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 ,   "null" ,   "Óleo" , 5 , "Cuadro de la guerra civil");
+        obras P6 = new obras(getID() , getTipo(), getNombre(), getAutor() , getPrecio() , getAltura() , getPeso() , 
+          getMaterial() , getTecnica() , getPiezas() , getDescripción());
         return P6;
     }
     
