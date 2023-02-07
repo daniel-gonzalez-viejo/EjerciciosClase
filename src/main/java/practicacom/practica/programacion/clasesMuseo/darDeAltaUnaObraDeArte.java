@@ -128,27 +128,27 @@ public class darDeAltaUnaObraDeArte{
     }
 
     public void darDeAlta() {
-        System.out.println("ID: ");
+        System.out.print("ID: ");
         setID(sc.nextLine());
-        System.out.println("Tipo: ");
+        System.out.print("Tipo: ");
         setTipo(sc.nextLine());
-        System.out.println("Nombre: ");
+        System.out.print("Nombre: ");
         setNombre(sc.nextLine());;
-        System.out.println("Autor: ");
+        System.out.print("Autor: ");
         setAutor(sc.nextLine());
-        System.out.println("Precio: ");
+        System.out.print("Precio: ");
         setPrecio(sc.nextDouble());
-        System.out.println("Altura: ");
+        System.out.print("Altura: ");
         setAltura(sc.nextDouble());
-        System.out.println("Peso: ");
+        System.out.print("Peso: ");
         setAltura(sc.nextDouble());
-        System.out.println("Material: ");
+        System.out.print("Material: ");
         setMaterial(sc.nextLine());
-        System.out.println("Técnica: ");
+        System.out.print("Técnica: ");
         setTecnica(sc.nextLine());
-        System.out.println("Piezas: ");
+        System.out.print("Piezas: ");
         setPiezas(sc.nextInt());
-        System.out.println("Descripción ");
+        System.out.print("Descripción ");
         setDescripción(sc.nextLine());
     }
 
