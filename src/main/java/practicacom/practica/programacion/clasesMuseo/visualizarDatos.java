@@ -1,8 +1,8 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class verDatosDeLaObraExpuesta extends modificarObra {
+public class visualizarDatos extends modificarObra {
 
-    public verDatosDeLaObraExpuesta() {
+    public visualizarDatos() {
     }
 
     public void mostrarDatos(obras aux) {         
