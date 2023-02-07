@@ -2,7 +2,11 @@ package practicacom.practica.programacion.clasesMuseo;
 
 import java.util.Scanner;
 
-public class darDeAltaUnaObraDeArte extends obras{
+import javax.swing.text.html.HTMLDocument.RunElement;
+
+import practicacom.practica.programacion.clasesMuseo.obras;
+
+public class darDeAltaUnaObraDeArte{
     private String ID;
     private String Tipo;
     private String Nombre;
@@ -18,28 +22,21 @@ public class darDeAltaUnaObraDeArte extends obras{
     Scanner sc = new Scanner(System.in);
 
     public darDeAltaUnaObraDeArte(String iD, String tipo, String nombre, String autor, double precio, double altura,
-            double peso, String material, String técnica, int piezas, String descripción, String iD2, String tipo2,
-            String nombre2, String autor2, double precio2, double altura2, double peso2, String material2,
-            String tecnica, int piezas2, String descripción2, Scanner sc) {
-        super(iD, tipo, nombre, autor, precio, altura, peso, material, técnica, piezas, descripción);
-        ID = iD2;
-        Tipo = tipo2;
-        Nombre = nombre2;
-        Autor = autor2;
-        Precio = precio2;
-        Altura = altura2;
-        Peso = peso2;
-        Material = material2;
+            double peso, String material, String tecnica, int piezas, String descripción) {
+        ID = iD;
+        Tipo = tipo;
+        Nombre = nombre;
+        Autor = autor;
+        Precio = precio;
+        Altura = altura;
+        Peso = peso;
+        Material = material;
         Tecnica = tecnica;
-        Piezas = piezas2;
-        Descripción = descripción2;
-        this.sc = sc;
+        Piezas = piezas;
+        Descripción = descripción;
     }
 
-
-    public darDeAltaUnaObraDeArte(String iD, String tipo, String nombre, String autor, double precio, double altura,
-            double peso, String material, String técnica, int piezas, String descripción) {
-        super(iD, tipo, nombre, autor, precio, altura, peso, material, técnica, piezas, descripción);
+    public darDeAltaUnaObraDeArte() {
     }
 
     public String getID() {
@@ -133,8 +130,7 @@ public class darDeAltaUnaObraDeArte extends obras{
     public void darDeAlta() {
         System.out.println("ID: ");
         setID(sc.nextLine());
-        obras P6 = new obras(getID() , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 ,   "null" ,   "Óleo" , 5 , "Cuadro de la guerra civil");
-
+        
         
         /* 
         System.out.println("Tipo: ");
@@ -160,17 +156,12 @@ public class darDeAltaUnaObraDeArte extends obras{
         */
     }
 
-    public String getCabeceros() {
-        return "ID" + "    " + "Tipo" + "       " + "Nombre" + "      " + "Autor"
-                    + "     " + "Precio" + "     " + "Altura" + "     " + "Peso" + "     " + "Material"
-                    + "     " + "Tecnica" + "     " + "Piezas" + "     " + "Descripción" + "";
+    public obras nuevaObra() {
+        darDeAlta();
+        obras P6 = new obras(getID() , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 ,   "null" ,   "Óleo" , 5 , "Cuadro de la guerra civil");
+        return P6;
     }
-
-    @Override
-    public String toString() {
-        return ID + "     " + Tipo + "     " + Nombre + "     " + Autor
-                + "     " + Precio + "     " + Altura + "     " + Peso + "     " + Material
-                + "     " + Tecnica + "     " + Piezas + "     " + Descripción + "";}
+    
     
     
 
