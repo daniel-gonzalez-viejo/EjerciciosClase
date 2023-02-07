@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class verObras {
+public class verObras extends obras{
     
     private obras vec[];
     private int tamaño;
