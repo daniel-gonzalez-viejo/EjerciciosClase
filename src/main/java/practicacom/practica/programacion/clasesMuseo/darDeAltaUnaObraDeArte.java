@@ -142,10 +142,11 @@ public class darDeAltaUnaObraDeArte{
         setAltura(sc.nextDouble());
         System.out.print("Peso: ");
         setAltura(sc.nextDouble());
+        sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
         System.out.print("Material: ");
         setMaterial(sc.nextLine());
         System.out.print("Técnica: ");
-        setTecnica(sc.nextLine());
+        setTecnica(sc.next());
         System.out.print("Piezas: ");
         setPiezas(sc.nextInt());
         System.out.print("Descripción ");
@@ -158,10 +159,5 @@ public class darDeAltaUnaObraDeArte{
           getMaterial() , getTecnica() , getPiezas() , getDescripción());
         return P6;
     }
-    
-    
-    
-
-    
 
 }
