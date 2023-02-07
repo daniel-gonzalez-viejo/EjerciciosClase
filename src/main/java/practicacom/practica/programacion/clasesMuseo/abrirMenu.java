@@ -35,9 +35,6 @@ public class abrirMenu {
     Pa.agregar(P4);
     Pa.agregar(P5);
     
-
-
-
         while (!interruptor) {
             System.out.println("-------------------------------------------------------------------------------------------------------");
             System.out.println(OPCIONES);
@@ -51,7 +48,6 @@ public class abrirMenu {
             System.out.println("-------------------------------------------------------------------------------------------------------");
             opcionMenu = sc.nextInt();
             
-
         switch (opcionMenu){
             case 1: {
                 System.out.println(P1.Cabeceros());
@@ -60,9 +56,8 @@ public class abrirMenu {
             }  
             
             case 2: {
-                obras P6 = new obras("006" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 ,   "null" ,   "Óleo" , 5 , "Cuadro de la guerra civil");
-                Pa.agregar(P6);
-                //System.out.println(P1.toStrin());
+                darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte();
+                Pa.agregar(dar.nuevaObra());
              break;
             } /*
             case 3: {
