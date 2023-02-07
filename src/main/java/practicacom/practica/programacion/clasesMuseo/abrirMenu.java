@@ -56,49 +56,17 @@ public class abrirMenu {
             }  
             
             case 2: {
-                darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte();
+                darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte(null, null, null, null, 0, 0, 0, null, null, 0, null);
                 Pa.agregar(dar.nuevaObra());
-             break;
-            } /*
-            case 3: {
-                modificarObra mod = new modificarObra(null, null, null, null, n, n, n, null, null, n, null);
-                System.out.println("¿Qué obra quieres modificar?");
-                int z = sc.nextInt();
-                System.out.println(objeto[z-1]);
-                mod.modificarID(null);
-                objeto[z-1].setID(ID);
-                System.out.print("Tipo:");
-                String Tipo = AA.nextLine();
-                objeto[z-1].setTipo(Tipo);
-                System.out.print("Nombre:");
-                String Nombre = AA.nextLine();
-                objeto[z-1].setNombre(Nombre);
-                System.out.print("Autor:");
-                String Autor = AA.nextLine();
-                objeto[z-1].setAutor(Autor);
-                System.out.print("Precio:");
-                double Precio = AA.nextDouble();
-                objeto[z-1].setPrecio(Precio);
-                System.out.print("Altura:");
-                double Altura = AA.nextDouble();
-                objeto[z-1].setAltura(Altura);
-                System.out.print("Peso:");
-                double Peso = AA.nextDouble();
-                objeto[z-1].setPeso(Peso);
-                System.out.print("Material:");
-                String Material = AA.nextLine();
-                objeto[z-1].setMaterial(Material);
-                System.out.print("Técnica:");
-                String Técnica = AA.nextLine();
-                objeto[z-1].setTecnica(Técnica);
-                System.out.print("Piezas:");
-                int Piezas = AA.nextInt();
-                objeto[z-1].setPiezas(Piezas);
-                System.out.print("Material:");
-                String Descripcion = AA.nextLine();
-                objeto[z-1].setDescripción(Descripcion);
                 break;
             } 
+            case 3: {
+                modificarObra mod = new modificarObra();
+                mod.pedirObra();
+                obras aux = Pa.buscar(mod.getCed());
+                mod.modificar(aux);
+                break;
+            } /*
             case 4: {
             }
             case 5: {
@@ -115,6 +83,10 @@ public class abrirMenu {
     }
     //sc.close();
 
+    
+
+        
+    
         
     }
 }
