@@ -1,6 +1,5 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-//import com.tiernoparla.obras;
 public class verObras {
     
     private obras vec[];
@@ -22,6 +21,15 @@ public class verObras {
             return true;
         }
         return false;
+    }
+
+    public obras buscar(String id) {
+        for (int i = 0; i < posiciones; i++) {
+            if(vec[i].getID().equals(id)) {
+                return vec[i];
+            }
+        }
+        return null;
     }
 
     public String toStrin() {
