@@ -1,6 +1,7 @@
 package practicacom.practica.programacion.clasesMuseo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.io.ObjectInputStream.GetField;
 
 =======
@@ -9,6 +10,10 @@ import java.io.ObjectInputStream.GetField;
 import java.io.ObjectInputStream.GetField;
 
 >>>>>>> 00ccc2d (Se crea y se añaden valores al metodo mostrarDatos)
+=======
+import java.io.ObjectInputStream.GetField;
+
+>>>>>>> 2f0aeec7f2d5a4534c409d498e7f0f4a32f073ce
 
 public class visualizarDatos extends modificarObra {
 
@@ -16,6 +21,9 @@ public class visualizarDatos extends modificarObra {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2f0aeec7f2d5a4534c409d498e7f0f4a32f073ce
 
     public void mostrarDatos(obras aux) {
         String nuevo;  
@@ -34,6 +42,7 @@ public class visualizarDatos extends modificarObra {
                 System.out.println("");
             } 
     }
+<<<<<<< HEAD
 =======
 >>>>>>> 495a01b (creo la clase visualizarDatos)
 =======
@@ -56,6 +65,8 @@ public class visualizarDatos extends modificarObra {
             } 
     }
 >>>>>>> d7f84eb (añado metodo mostrarDatos)
+=======
+>>>>>>> 2f0aeec7f2d5a4534c409d498e7f0f4a32f073ce
     
     
 
