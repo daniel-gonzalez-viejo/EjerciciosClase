@@ -10,6 +10,7 @@ public class visualizarDatos extends modificarObra {
     public visualizarDatos() {
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public void mostrarDatos(obras aux) {
         String nuevo;  
@@ -30,6 +31,19 @@ public class visualizarDatos extends modificarObra {
     }
 =======
 >>>>>>> 495a01b (creo la clase visualizarDatos)
+=======
+
+    @Override
+    public void pedirObra() {
+        super.pedirObra();
+    }
+
+    public void mostrarDatos(obras aux) {
+        if(aux!= null) {
+            System.out.println("Nombre: " + getNombre());
+        }
+    }
+>>>>>>> d7f84eb (añado metodo mostrarDatos)
     
     
 
