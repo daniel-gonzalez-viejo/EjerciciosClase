@@ -1,17 +1,18 @@
 package practicacom.practica.programacion.clasesMuseo;
 
 public class obras {
-    protected String ID;
-    protected String Tipo;
-    protected String Nombre;
-    protected String Autor;
-    protected double Precio;
-    protected double Altura;
-    protected double Peso;
-    protected String Material;
-    protected String Técnica;
-    protected int Piezas;
-    protected String Descripción;
+    private String ID;
+    private String Tipo;
+    private String Nombre;
+    private String Autor;
+    private double Precio;
+    private double Altura;
+    private double Peso;
+    private String Material;
+    private String Técnica;
+    private int Piezas;
+    private String Descripción;
+
     public obras(String iD, String tipo, String nombre, String autor, double precio, double altura, double peso,
             String material, String técnica, int piezas, String descripción) {
         this.ID = iD;
@@ -112,6 +113,7 @@ public class obras {
         System.out.print("Descripción");
         return s;
     }
+    
 
     @Override
     public String toString() {
