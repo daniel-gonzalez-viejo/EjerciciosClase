@@ -70,9 +70,11 @@ public class abrirMenu {
                 obras aux = Pa.buscar(vis.getCed());
                 vis.mostrarDatos(aux);
 
-            }/*
-            case 5: {
             }
+            case 5: {
+                obtenerPrecioDeVenta obt = new obtenerPrecioDeVenta();
+                obt.pedirO
+            }/*
             case 6: {
             }  
             case 7: {
