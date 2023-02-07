@@ -26,6 +26,14 @@ public class obras {
         this.Piezas = piezas;
         this.Descripción = descripción;
     }
+
+
+    
+    public obras() {
+    }
+
+
+
     public String getID() {
         return ID;
     }
