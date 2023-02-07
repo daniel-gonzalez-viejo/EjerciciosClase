@@ -1,8 +1,5 @@
 package practicacom.practica.programacion.clasesMuseo;
 import java.util.Scanner;
-import java.util.Vector;
-
-import practicacom.practica.programacion.clasesMuseo.obras;
 
 public class abrirMenu {
     public static void main(String[] args) {
