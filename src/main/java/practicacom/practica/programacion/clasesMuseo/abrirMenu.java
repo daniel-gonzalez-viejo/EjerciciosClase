@@ -1,10 +1,12 @@
 package practicacom.practica.programacion.clasesMuseo;
 import java.util.Scanner;
 
-public class abrirMenu {
+public class abrirMenu extends verObras{
     public static void main(String[] args) {
-        
-    int opcionMenu;
+
+    int tamaño_predeterminado = 5;
+    int opcion_menu;
+    boolean interruptor = false;
 
     final String OPCIONES = "¿Qué quieres hacer?";
     final String OPCION_1 = "1. Ver cuadros";
@@ -14,8 +16,6 @@ public class abrirMenu {
     final String OPCION_5 = "5. Obtener el precio de venta de una de las obras de arte expuestas";
     final String OPCION_6 = "6. Imprimir una etiqueta para clasificar una de las obras expuestas y dar información adicional";
     final String SALIR = "7. Salir";
-    
-    boolean interruptor = false;
 
     Scanner sc = new Scanner(System.in);
 
@@ -25,12 +25,13 @@ public class abrirMenu {
     obras P4 = new obras("004" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "null" , "Óleo" , 5 , "Óleo");
     obras P5 = new obras("005" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 ,  "acero" , "null" ,  5 , "Escultura");
     
-    verObras Pa = new verObras(10);
-    Pa.agregar(P1);
-    Pa.agregar(P2);
-    Pa.agregar(P3);
-    Pa.agregar(P4);
-    Pa.agregar(P5);
+    verObras galería = new verObras(tamaño_predeterminado);
+
+    galería.agregar(P1);
+    galería.agregar(P2);
+    galería.agregar(P3);
+    galería.agregar(P4);
+    galería.agregar(P5);
     
         while (!interruptor) {
             System.out.println("-------------------------------------------------------------------------------------------------------");
@@ -43,45 +44,44 @@ public class abrirMenu {
             System.out.println(OPCION_6);
             System.out.println(SALIR);
             System.out.println("-------------------------------------------------------------------------------------------------------");
-            opcionMenu = sc.nextInt();
+            opcion_menu = sc.nextInt();
             
-        switch (opcionMenu){
+        switch (opcion_menu){
             case 1: {
                 System.out.println(P1.Cabeceros());
-                System.out.println(Pa.toStrin());
+                System.out.println(galería.toStrin());
                 break;
             }  
-            
             case 2: {
                 darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte();
-                Pa.agregar(dar.nuevaObra());
+                galería.agregar(dar.nuevaObra());
                 break;
             } 
             case 3: {
                 modificarObra mod = new modificarObra();
                 mod.pedirObra();
-                obras aux = Pa.buscar(mod.getCed());
+                obras aux = galería.buscar(mod.getCódigo());
                 mod.modificar(aux);
                 break;
             } 
             case 4: {
                 visualizarDatos vis = new visualizarDatos();
                 vis.pedirObra();
-                obras aux = Pa.buscar(vis.getCed());
+                obras aux = galería.buscar(vis.getCódigo());
                 vis.mostrarDatos(aux);
                 break;
             }
             case 5: {
                 obtenerPrecioDeVenta obt = new obtenerPrecioDeVenta();
                 obt.pedirObra();
-                obras aux = Pa.buscar(obt.getCed());
+                obras aux = galería.buscar(obt.getCódigo());
                 obt.obtenerPrecio(aux);
                 break;
             }
             case 6: {
                 imprimirEtiqueta imp = new imprimirEtiqueta();
                 imp.pedirObra();
-                obras aux = Pa.buscar(imp.getCed());
+                obras aux = galería.buscar(imp.getCódigo());
                 imp.imprimirUnaEtiqueta(aux);
                 break;
             }  
@@ -94,4 +94,5 @@ public class abrirMenu {
         
     }
     }
+
 }
