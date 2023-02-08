@@ -1,5 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 public class darDeAltaUnaObraDeArte extends verObras{
@@ -15,23 +16,29 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final String PIEZAS = "Piezas: ";
     final String DESCRIPCIÓN = "Descripción: ";
 
+    final String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
+
     Scanner sc = new Scanner(System.in);
 
     public darDeAltaUnaObraDeArte() {
+    }
+
+    public void comprobarLongitudID(String id, int n, String mensaje_error) {
+        while (id.length() > n) {
+            System.out.println(mensaje_error);
+            insertarID();
+        }
     }
 
     public void insertarID() {
         System.out.print(ID);
         setID(sc.nextLine());
     }
-    
+
 
     public void darDeAlta() {
         insertarID();
-        while (getID().length() > 3) {
-            System.out.println("El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ");
-            insertarID();
-        }
+        comprobarLongitudID(getID(), 3, MENSAJE_ERROR_ID);
         System.out.print(TIPO);
         setTipo(sc.nextLine());
         System.out.print(NOMBRE);
