@@ -42,8 +42,6 @@ public class verObras extends obras{
         return null;
     }
 
-    
-
     public int getTamaño() {
         return tamaño;
     }
