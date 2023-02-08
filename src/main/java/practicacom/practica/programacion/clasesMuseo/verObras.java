@@ -3,7 +3,7 @@ package practicacom.practica.programacion.clasesMuseo;
 public class verObras extends obras{
     
     private obras vec[];
-    private int tamaño;
+    private int tamaño = 5;
     private int posiciones;
 
     public verObras(int n) {
@@ -12,7 +12,18 @@ public class verObras extends obras{
         posiciones = 0;
     }
     
+    
+
     public verObras() {
+    }
+
+    public void aumentarTamaño(obras valor) { 
+        if (tamaño == vec.length) {
+          obras[] newData = new obras[vec.length + 1];
+          System.arraycopy(vec, 0, newData, 0, vec.length);
+          vec = newData;
+        }
+        vec[tamaño++] = valor;
     }
 
     public boolean agregar (obras n) {
@@ -30,6 +41,12 @@ public class verObras extends obras{
             }
         }
         return null;
+    }
+
+    
+
+    public int getTamaño() {
+        return tamaño;
     }
 
     public String toStrin() {
