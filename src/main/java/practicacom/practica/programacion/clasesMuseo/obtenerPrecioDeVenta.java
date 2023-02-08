@@ -2,7 +2,6 @@ package practicacom.practica.programacion.clasesMuseo;
 
 public class obtenerPrecioDeVenta extends modificarObra{
 
-    String EURO = "U+20AC";
     final String COMISION_GALERÍA = "Comisión de la galería: ";
     final String IMPORTE_POR_PESO = "Importe por peso (€): ";
     final String IMPORTE_POR_ALTURA = "Importe por altura (€): ";
