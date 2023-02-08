@@ -3,7 +3,7 @@ package practicacom.practica.programacion.clasesMuseo;
 public class verObras extends obras{
     
     private obras vec[];
-    private int tamaño = 5;
+    private int tamaño;
     private int posiciones;
 
     public verObras(int n) {
