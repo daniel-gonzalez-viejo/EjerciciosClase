@@ -1,6 +1,16 @@
 package practicacom.practica.programacion.clasesMuseo;
 
 public class obtenerPrecioDeVenta extends modificarObra{
+
+    final String EURO = "\u20AC" + ": ";
+    final String COMISION_GALERÍA = "Comisión de la galería: ";
+    final String IMPORTE_POR_PESO = "Importe por peso";
+    final String IMPORTE_POR_ALTURA = "Importe por altura (€): ";
+    final String PRECIO_VENTA = "Precio de venta (€): ";
+    final String PRECIO_VENTA_DOLARES = "Precio de venta ($): ";
+    final String DESCUENTO_PINTURA = "Descuento (10% Pintura euros): ";
+    final String DESCUENTO_ESCULTURA = "Descuento (20% Escultura euros): ";
+    
     private double importePeso;
     private double importeAltura;
     private double importePiezas;
@@ -18,19 +28,19 @@ public class obtenerPrecioDeVenta extends modificarObra{
             importePorAltura(aux.getAltura());
             System.out.println("");
             System.out.println("------------------------------");
-            System.out.println("Nombre: " + aux.getNombre());
-            System.out.println("Altura(m): " + aux.getAltura());
-            System.out.println("Peso(t): " + aux.getPeso());
-            System.out.println("Precio(euros): " + aux.getPrecio());
-            System.out.println("Comisión de la galería: " + comision);
-            System.out.println("Importe por peso (euros): " + importePeso);
-            System.out.println("Importe por altura (euros): " + importeAltura);
+            System.out.println(NOMBRE + aux.getNombre());
+            System.out.println(ALTURA + aux.getAltura());
+            System.out.println(PESO + aux.getPeso());
+            System.out.println(PRECIO + aux.getPrecio());
+            System.out.println(COMISION_GALERÍA + comision);
+            System.out.println(IMPORTE_POR_PESO + EURO + importePeso);
+            System.out.println(IMPORTE_POR_ALTURA + importeAltura);
             importePorPiezaAdicional(aux.getPiezas());
             precioFinal = aux.getPrecio() + comision + importePeso + importeAltura + importePiezas;
-            System.out.println("Precio de venta (euros): " + precioFinal);
+            System.out.println(PRECIO_VENTA + precioFinal);
             conversionADolares(precioFinal);
             descuentosPorObra(aux.getTipo());
-            System.out.println("Precio de venta (euros): " + (precioFinal - descuento));
+            System.out.println(PRECIO_VENTA + (precioFinal - descuento));
             System.out.println("");
         } 
 
@@ -71,11 +81,11 @@ public class obtenerPrecioDeVenta extends modificarObra{
     public void descuentosPorObra(String Tipo) {
         if (Tipo == "Pintura") {
             descuento = precioFinal * 0.1;
-            System.out.println("Descuento (10% Pintura euros): " + descuento);
+            System.out.println(DESCUENTO_PINTURA + descuento);
         }
         else if (Tipo == "Escultura") {
             descuento = precioFinal * 0.2;
-            System.out.println("Descuento (20% Escultura euros): " + descuento);
+            System.out.println(DESCUENTO_ESCULTURA + descuento);
         }
 
     }
