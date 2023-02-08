@@ -11,8 +11,6 @@ public class verObras extends obras{
         vec = new obras[tamaño];
         posiciones = 0;
     }
-    
-    
 
     public verObras() {
     }
@@ -27,6 +25,7 @@ public class verObras extends obras{
     }
 
     public boolean agregar (obras n) {
+        aumentarTamaño(n);
         if(posiciones < tamaño) {
             vec[posiciones++] = n;
             return true;
