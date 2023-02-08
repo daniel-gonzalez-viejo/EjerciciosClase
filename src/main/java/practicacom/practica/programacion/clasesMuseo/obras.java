@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class obras {
+public abstract class obras {
     private String ID;
     private String Tipo;
     private String Nombre;
