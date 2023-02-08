@@ -77,9 +77,10 @@ public class abrirMenu {
                 obras aux = Pa.buscar(obt.getCed());
                 obt.obtenerPrecio(aux);
                 break;
-            }/*
+            }
             case 6: {
-            }  
+                
+            }/*  
             case 7: {
                 System.out.println("Adios");
                 interruptor = true;
