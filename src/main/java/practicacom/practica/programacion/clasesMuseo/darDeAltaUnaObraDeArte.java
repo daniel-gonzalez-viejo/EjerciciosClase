@@ -35,12 +35,16 @@ public class darDeAltaUnaObraDeArte extends verObras{
         setID(sc.nextLine());
     }
 
+    public void insertarTipo() {
+        System.out.print(TIPO);
+        setTipo(sc.nextLine());
+    }
+
 
     public void darDeAlta() {
         insertarID();
         comprobarLongitudID(getID(), 3, MENSAJE_ERROR_ID);
-        System.out.print(TIPO);
-        setTipo(sc.nextLine());
+        
         System.out.print(NOMBRE);
         setNombre(sc.nextLine());;
         System.out.print(AUTOR);
