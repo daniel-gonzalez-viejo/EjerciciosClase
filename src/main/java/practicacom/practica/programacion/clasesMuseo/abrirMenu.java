@@ -53,7 +53,7 @@ public class abrirMenu {
             }  
             
             case 2: {
-                darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte(null, null, null, null, 0, 0, 0, null, null, 0, null);
+                darDeAltaUnaObraDeArte dar = new darDeAltaUnaObraDeArte();
                 Pa.agregar(dar.nuevaObra());
                 break;
             } 
@@ -93,12 +93,5 @@ public class abrirMenu {
         } 
         
     }
-    //sc.close();
-
-    
-
-        
-    
-   
     }
 }
