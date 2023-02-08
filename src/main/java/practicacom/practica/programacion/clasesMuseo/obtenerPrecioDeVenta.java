@@ -74,7 +74,7 @@ public class obtenerPrecioDeVenta extends modificarObra{
 
     public void conversionADolares(double precioFinal) {
         precioFinal = precioFinal * 0.99;
-        System.out.println("Precio de venta ($): " + precioFinal);
+        System.out.println(PRECIO_VENTA_DOLARES + precioFinal);
     }
 
     public void descuentosPorObra(String Tipo) {
