@@ -9,9 +9,9 @@ public class imprimirEtiqueta extends modificarObra{
         if (aux != null) {
             System.out.println();
             System.out.println("------------------------------");
-            System.out.println("Nombre: " + aux.getNombre());
-            System.out.println("Autor: " + aux.getAutor());
-            System.out.println("Descripción: " + aux.getDescripción());
+            System.out.println(NOMBRE + aux.getNombre());
+            System.out.println(AUTOR + aux.getAutor());
+            System.out.println(DESCRIPCIÓN + aux.getDescripción());
         } 
     }
     
