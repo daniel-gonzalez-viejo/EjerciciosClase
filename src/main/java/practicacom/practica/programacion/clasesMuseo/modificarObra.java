@@ -1,7 +1,7 @@
 package practicacom.practica.programacion.clasesMuseo;
 import java.util.Scanner;
 
-public class modificarObra extends verObras {
+public class modificarObra extends darDeAltaUnaObraDeArte {
 
     Scanner sc = new Scanner(System.in);
     String Ced;
@@ -28,40 +28,40 @@ public class modificarObra extends verObras {
         double nuevo2;
         int nuevo3;             
             if (aux != null) {
-                System.out.print ("ID: ");
+                System.out.print (ID);
                 nuevo = dd.nextLine();
                 aux.setID(nuevo);
-                System.out.print ("Tipo: ");
+                System.out.print (TIPO);
                 nuevo = dd.nextLine();
-                aux.setTipo(nuevo); //////
-                System.out.print ("Nombre: ");
+                aux.setTipo(nuevo);
+                System.out.print (NOMBRE);
                 nuevo = dd.nextLine();
                 aux.setNombre(nuevo);
-                System.out.print ("Autor: ");
+                System.out.print (AUTOR);
                 nuevo = dd.nextLine();
                 aux.setAutor(nuevo);
-                System.out.print ("Precio: ");
+                System.out.print (PRECIO);
                 nuevo2 = dd.nextDouble();
                 aux.setPrecio(nuevo2);
-                System.out.print ("Altura: ");
+                System.out.print (ALTURA);
                 nuevo2 = dd.nextDouble();
                 aux.setAltura(nuevo2);
                 Scanner dd = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
-                System.out.print ("Peso: ");
+                System.out.print (PESO);
                 nuevo2 = dd.nextDouble();
                 aux.setPeso(nuevo2);
                 dd.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
-                System.out.print ("Material: ");
+                System.out.print (MATERIAL);
                 nuevo = dd.nextLine();
                 aux.setMaterial(nuevo);
-                System.out.print ("Técnica: ");
+                System.out.print (TÉCNICA);
                 nuevo = dd.nextLine();
                 aux.setTécnica(nuevo);
-                System.out.print ("Piezas: ");
+                System.out.print (PIEZAS);
                 nuevo3 = dd.nextInt();
                 aux.setPiezas(nuevo3);
                 dd.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
-                System.out.print ("Descripción: ");
+                System.out.print (DESCRIPCIÓN);
                 nuevo = dd.nextLine();
                 aux.setDescripción(nuevo);
             } 
