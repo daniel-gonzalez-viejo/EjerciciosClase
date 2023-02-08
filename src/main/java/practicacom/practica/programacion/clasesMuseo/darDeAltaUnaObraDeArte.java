@@ -3,6 +3,18 @@ package practicacom.practica.programacion.clasesMuseo;
 import java.util.Scanner;
 
 public class darDeAltaUnaObraDeArte extends obras{
+    final String ID = "ID: ";
+    final String TIPO = "Tipo: ";
+    final String NOMBRE = "Nombre: ";
+    final String AUTOR = "Autor: ";
+    final String PRECIO = "Precio: ";
+    final String ALTURA = "Altura: ";
+    final String PESO = "Peso: ";
+    final String MATERIAL = "Material: ";
+    final String TÉCNICA = "Técnica: ";
+    final String PIEZAS = "Piezas: ";
+    final String DESCRIPCIÓN = "Descripción: ";
+
 
 
     Scanner sc = new Scanner(System.in);
@@ -14,30 +26,30 @@ public class darDeAltaUnaObraDeArte extends obras{
 
 
     public void darDeAlta() {
-        System.out.print("ID: ");
+        System.out.print(ID);
         setID(sc.nextLine());
-        System.out.print("Tipo: ");
+        System.out.print(TIPO);
         setTipo(sc.nextLine());
-        System.out.print("Nombre: ");
+        System.out.print(NOMBRE);
         setNombre(sc.nextLine());;
-        System.out.print("Autor: ");
+        System.out.print(AUTOR);
         setAutor(sc.nextLine());
-        System.out.print("Precio: ");
+        System.out.print(PRECIO);
         setPrecio(sc.nextDouble());
-        System.out.print("Altura: ");
+        System.out.print(ALTURA);
         setAltura(sc.nextDouble());
         Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
-        System.out.print("Peso: ");
+        System.out.print(PESO);
         setPeso(sc.nextDouble());
         sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
-        System.out.print("Material: ");
+        System.out.print(MATERIAL);
         setMaterial(sc.nextLine());
-        System.out.print("Técnica: ");
+        System.out.print(TÉCNICA);
         setTécnica(sc.next());
-        System.out.print("Piezas: ");
+        System.out.print(PIEZAS);
         setPiezas(sc.nextInt());
         sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
-        System.out.print("Descripción: ");
+        System.out.print(DESCRIPCIÓN);
         setDescripción(sc.nextLine());
     }
 
