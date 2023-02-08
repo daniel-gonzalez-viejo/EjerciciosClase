@@ -4,66 +4,65 @@ import java.util.Scanner;
 public class modificarObra extends darDeAltaUnaObraDeArte {
 
     Scanner sc = new Scanner(System.in);
-    String Ced;
-    Scanner dd = new Scanner(System.in);
+    String código;
     
     public modificarObra() {
     }
 
-    public String getCed() {
-        return Ced;
+    public String getCódigo() {
+        return código;
     }
 
-    public void setCed(String ced) {
-        Ced = ced;
+    public void setCódigo(String cod) {
+        código = cod;
     }
 
     public void pedirObra() {
         System.out.print("¿Qué obra quieres visualizar?:  ");
-        setCed(dd.nextLine());
+        setCódigo(sc.nextLine());
     }
 
     public void modificar(obras aux) {
-        String nuevo;  
-        double nuevo2;
-        int nuevo3;             
+        String auxiliar_texto;  
+        double auxiliar_dinero;
+        int auxiliar_cifras;             
             if (aux != null) {
                 System.out.print (ID);
-                nuevo = dd.nextLine();
-                aux.setID(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setID(auxiliar_texto);
                 System.out.print (TIPO);
-                nuevo = dd.nextLine();
-                aux.setTipo(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setTipo(auxiliar_texto);
                 System.out.print (NOMBRE);
-                nuevo = dd.nextLine();
-                aux.setNombre(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setNombre(auxiliar_texto);
                 System.out.print (AUTOR);
-                nuevo = dd.nextLine();
-                aux.setAutor(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setAutor(auxiliar_texto);
                 System.out.print (PRECIO);
-                nuevo2 = dd.nextDouble();
-                aux.setPrecio(nuevo2);
+                auxiliar_dinero = sc.nextDouble();
+                aux.setPrecio(auxiliar_dinero);
                 System.out.print (ALTURA);
-                nuevo2 = dd.nextDouble();
-                aux.setAltura(nuevo2);
-                Scanner dd = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
+                auxiliar_dinero = sc.nextDouble();
+                aux.setAltura(auxiliar_dinero);
+                Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (PESO);
-                nuevo2 = dd.nextDouble();
-                aux.setPeso(nuevo2);
-                dd.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
+                auxiliar_dinero = sc.nextDouble();
+                aux.setPeso(auxiliar_dinero);
+                sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (MATERIAL);
-                nuevo = dd.nextLine();
-                aux.setMaterial(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setMaterial(auxiliar_texto);
                 System.out.print (TÉCNICA);
-                nuevo = dd.nextLine();
-                aux.setTécnica(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setTécnica(auxiliar_texto);
                 System.out.print (PIEZAS);
-                nuevo3 = dd.nextInt();
-                aux.setPiezas(nuevo3);
-                dd.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
+                auxiliar_cifras = sc.nextInt();
+                aux.setPiezas(auxiliar_cifras);
+                sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (DESCRIPCIÓN);
-                nuevo = dd.nextLine();
-                aux.setDescripción(nuevo);
+                auxiliar_texto = sc.nextLine();
+                aux.setDescripción(auxiliar_texto);
             } 
     }
 
