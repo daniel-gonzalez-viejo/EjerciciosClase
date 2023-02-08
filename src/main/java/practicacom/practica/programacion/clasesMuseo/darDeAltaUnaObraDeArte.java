@@ -20,9 +20,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
     public darDeAltaUnaObraDeArte() {
     }
 
-    public void darDeAlta() {
+    public void insertarID() {
         System.out.print(ID);
         setID(sc.nextLine());
+    }
+    
+
+    public void darDeAlta() {
+        insertarID();
+        while (getID().length() > 3) {
+            System.out.println("El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ");
+            insertarID();
+        }
         System.out.print(TIPO);
         setTipo(sc.nextLine());
         System.out.print(NOMBRE);
