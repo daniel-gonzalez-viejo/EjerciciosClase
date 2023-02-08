@@ -9,13 +9,13 @@ public class visualizarDatos extends modificarObra{
             if (aux != null) {
                 System.out.println("");
                 System.out.println("------------------------------");
-                System.out.println("Nombre: " + aux.getNombre());
-                System.out.println("Autor: " + aux.getAutor());
-                System.out.println("Precio(euros): " + aux.getPrecio());
-                System.out.println("Altura(m): " + aux.getAltura());
-                System.out.println("Peso(t): " + aux.getPeso());
-                System.out.println("Número de piezas: " + aux.getPiezas());
-                System.out.println("Descripción: " + aux.getDescripción());
+                System.out.println(NOMBRE + aux.getNombre());
+                System.out.println(AUTOR + aux.getAutor());
+                System.out.println(PRECIO + aux.getPrecio());
+                System.out.println(ALTURA + aux.getAltura());
+                System.out.println(PESO + aux.getPeso());
+                System.out.println(PIEZAS + aux.getPiezas());
+                System.out.println(DESCRIPCIÓN + aux.getDescripción());
                 System.out.println("");
             } 
     }
