@@ -17,6 +17,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final String DESCRIPCIÓN = "Descripción: ";
 
     final String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
+    final String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
 
     Scanner sc = new Scanner(System.in);
 
