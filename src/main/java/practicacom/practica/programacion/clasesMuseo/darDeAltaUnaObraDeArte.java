@@ -30,6 +30,13 @@ public class darDeAltaUnaObraDeArte extends verObras{
         }
     }
 
+    public void comprobarTipoDeObra(String tipo, String mensaje_error) {
+        while (tipo != "Pintura" || tipo != "Escultura") {
+            System.out.println(mensaje_error);
+            insertarTipo();
+        }
+    }
+
     public void insertarID() {
         System.out.print(ID);
         setID(sc.nextLine());
