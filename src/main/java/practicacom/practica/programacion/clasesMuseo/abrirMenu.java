@@ -79,13 +79,17 @@ public class abrirMenu {
                 break;
             }
             case 6: {
-                
-            }/*  
+                imprimirEtiqueta imp = new imprimirEtiqueta();
+                imp.pedirObra();
+                obras aux = Pa.buscar(imp.getCed());
+                imp.imprimirUnaEtiqueta(aux);
+                break;
+            }  
             case 7: {
                 System.out.println("Adios");
                 interruptor = true;
+                break;
             }
-*/
         } 
         
     }
@@ -95,7 +99,6 @@ public class abrirMenu {
 
         
     
-        
+   
     }
 }
-
