@@ -2,14 +2,14 @@ package practicacom.practica.programacion.clasesMuseo;
 
 public class obtenerPrecioDeVenta extends modificarObra{
 
-    final String EURO = "\u20AC" + ": ";
+    String EURO = "U+20AC";
     final String COMISION_GALERÍA = "Comisión de la galería: ";
-    final String IMPORTE_POR_PESO = "Importe por peso";
+    final String IMPORTE_POR_PESO = "Importe por peso (€): ";
     final String IMPORTE_POR_ALTURA = "Importe por altura (€): ";
     final String PRECIO_VENTA = "Precio de venta (€): ";
     final String PRECIO_VENTA_DOLARES = "Precio de venta ($): ";
-    final String DESCUENTO_PINTURA = "Descuento (10% Pintura euros): ";
-    final String DESCUENTO_ESCULTURA = "Descuento (20% Escultura euros): ";
+    final String DESCUENTO_PINTURA = "Descuento (10% Pintura €): ";
+    final String DESCUENTO_ESCULTURA = "Descuento (20% Escultura €): ";
     
     private double importePeso;
     private double importeAltura;
@@ -33,7 +33,7 @@ public class obtenerPrecioDeVenta extends modificarObra{
             System.out.println(PESO + aux.getPeso());
             System.out.println(PRECIO + aux.getPrecio());
             System.out.println(COMISION_GALERÍA + comision);
-            System.out.println(IMPORTE_POR_PESO + EURO + importePeso);
+            System.out.println(IMPORTE_POR_PESO + importePeso);
             System.out.println(IMPORTE_POR_ALTURA + importeAltura);
             importePorPiezaAdicional(aux.getPiezas());
             precioFinal = aux.getPrecio() + comision + importePeso + importeAltura + importePiezas;
@@ -75,7 +75,7 @@ public class obtenerPrecioDeVenta extends modificarObra{
 
     public void conversionADolares(double precioFinal) {
         precioFinal = precioFinal * 0.99;
-        System.out.println("Precio de venta (dolares): " + precioFinal);
+        System.out.println("Precio de venta ($): " + precioFinal);
     }
 
     public void descuentosPorObra(String Tipo) {
