@@ -2,7 +2,7 @@ package practicacom.practica.programacion.clasesMuseo;
 
 import java.util.Scanner;
 
-public class darDeAltaUnaObraDeArte extends obras{
+public class darDeAltaUnaObraDeArte extends verObras{
     final String ID = "ID: ";
     final String TIPO = "Tipo: ";
     final String NOMBRE = "Nombre: ";
@@ -15,15 +15,10 @@ public class darDeAltaUnaObraDeArte extends obras{
     final String PIEZAS = "Piezas: ";
     final String DESCRIPCIÓN = "Descripción: ";
 
-
-
     Scanner sc = new Scanner(System.in);
 
-    public darDeAltaUnaObraDeArte(String iD, String tipo, String nombre, String autor, double precio, double altura,
-            double peso, String material, String técnica, int piezas, String descripción) {
-        super(iD, tipo, nombre, autor, precio, altura, peso, material, técnica, piezas, descripción);
+    public darDeAltaUnaObraDeArte() {
     }
-
 
     public void darDeAlta() {
         System.out.print(ID);
