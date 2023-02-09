@@ -27,46 +27,53 @@ public class modificarObra extends darDeAltaUnaObraDeArte {
         double auxiliar_dinero;
         int auxiliar_cifras;             
             if (aux != null) {
-                System.out.print (ID);
-                auxiliar_texto = sc.nextLine();
-                aux.setID(auxiliar_texto);
-                System.out.print (TIPO);
-                auxiliar_texto = sc.nextLine();
-                aux.setTipo(auxiliar_texto);
-                System.out.print (NOMBRE);
-                auxiliar_texto = sc.nextLine();
+                aux.setID(insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID));
+                aux.setTipo(insertarTipo(MENSAJE_ERROR_TIPO));
+                aux.setNombre(insertarNombre());
+                aux.setAutor(insertarAutor());
+                aux.setPrecio(insertarPrecio());
+                aux.setAltura(insertarAltura());
+                aux.setPeso(insertarPeso());
+                aux.setMaterial(insertarMaterial(MENSAJE_ERROR_MATERIAL));
+                aux.setTécnica(insertarTecnica(MENSAJE_ERROR_TECNICA));
+                aux.setPiezas(insertarPiezas());
+                aux.setDescripción(insertarDescripción());
+
+
+
+
+
+
+
+
+
+                
+                auxiliar_texto = ;
                 aux.setNombre(auxiliar_texto);
                 System.out.print (AUTOR);
-                auxiliar_texto = sc.nextLine();
+                auxiliar_texto = insertarAutor();
                 aux.setAutor(auxiliar_texto);
                 System.out.print (PRECIO);
-                auxiliar_dinero = sc.nextDouble();
+                auxiliar_dinero = insertarPrecio();
                 aux.setPrecio(auxiliar_dinero);
                 System.out.print (ALTURA);
-                auxiliar_dinero = sc.nextDouble();
+                auxiliar_dinero = insertarAltura();
                 aux.setAltura(auxiliar_dinero);
-                Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (PESO);
-                auxiliar_dinero = sc.nextDouble();
+                auxiliar_dinero = insertarPeso();
                 aux.setPeso(auxiliar_dinero);
-                sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (MATERIAL);
-                auxiliar_texto = sc.nextLine();
+                auxiliar_texto = insertarMaterial(MENSAJE_ERROR_MATERIAL);
                 aux.setMaterial(auxiliar_texto);
                 System.out.print (TÉCNICA);
-                auxiliar_texto = sc.nextLine();
+                auxiliar_texto = insertarTecnica(MENSAJE_ERROR_TECNICA);
                 aux.setTécnica(auxiliar_texto);
                 System.out.print (PIEZAS);
-                auxiliar_cifras = sc.nextInt();
+                auxiliar_cifras = insertarPiezas();
                 aux.setPiezas(auxiliar_cifras);
-                sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
                 System.out.print (DESCRIPCIÓN);
-                auxiliar_texto = sc.nextLine();
+                auxiliar_texto = insertarDescripción();
                 aux.setDescripción(auxiliar_texto);
-            } 
-    }
-
-    
-    
-    
+            }     
+        }
 }
