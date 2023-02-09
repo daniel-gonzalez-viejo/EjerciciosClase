@@ -143,6 +143,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
         }
     }
 
+    public void insertarPiezas() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(PIEZAS);
+        setPiezas(sc.nextInt());
+    }
+
+    public void insertarDescripción() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(DESCRIPCIÓN);
+        setDescripción(sc.nextLine());
+    }
+
 
 
     public void darDeAlta() {
@@ -155,14 +167,8 @@ public class darDeAltaUnaObraDeArte extends verObras{
         insertarPeso();
         insertarMaterial(MENSAJE_ERROR_MATERIAL);
         insertarTecnica(MENSAJE_ERROR_TECNICA);
-        /*System.out.print(TÉCNICA);
-        setTécnica(sc.next());
-        System.out.print(PIEZAS);
-        setPiezas(sc.nextInt());
-        sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
-        System.out.print(DESCRIPCIÓN);
-        setDescripción(sc.nextLine());
-        */
+        insertarPiezas();
+        insertarDescripción();
     }
 
     public obras nuevaObra() {
