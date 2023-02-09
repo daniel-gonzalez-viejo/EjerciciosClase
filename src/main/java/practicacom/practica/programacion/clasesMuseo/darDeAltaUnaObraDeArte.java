@@ -28,28 +28,29 @@ public class darDeAltaUnaObraDeArte extends verObras{
     public darDeAltaUnaObraDeArte() {
     }
 
-    public boolean insertarID(int n, String mensaje_error) {
+    public void insertarID(int n, String mensaje_error) {
         while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(ID);
             setID(sc.nextLine());
             if (getID().length() <= n) {
                 inserción_exitosa = true;
+                System.out.println(getID());
                 break;
             }
             else {
                 System.out.println(mensaje_error);
             }
         }
-        return inserción_exitosa = false;
+        inserción_exitosa = false;
     }
 
     public void insertarTipo(String mensaje_error) {
         while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(TIPO);
-            setID(sc.nextLine());
-            if (getID().equals(OPCION_TIPO_PINTURA) || getID().equals(OPCION_TIPO_ESCULTURA)) {
+            setTipo(sc.nextLine());
+            if (getTipo().equals(OPCION_TIPO_PINTURA) || getTipo().equals(OPCION_TIPO_ESCULTURA)) {
                 inserción_exitosa = true;
                 break;
             }
@@ -72,16 +73,20 @@ public class darDeAltaUnaObraDeArte extends verObras{
         setAutor(sc.nextLine());
     }
 
+    public void insertarPrecio() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(PRECIO);
+        setPrecio(sc.nextDouble());
+    }
+
 
 
     public void darDeAlta() {
-        //insertarID(TAMAÑO_MAXIMO_ID);
         insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID);
         insertarTipo(MENSAJE_ERROR_TIPO);
         insertarNombre();
-        insertarAutor();/* 
-        System.out.print(PRECIO);
-        setPrecio(sc.nextDouble());
+        insertarAutor();
+        insertarPrecio();/* 
         System.out.print(ALTURA);
         setAltura(sc.nextDouble());
         Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
