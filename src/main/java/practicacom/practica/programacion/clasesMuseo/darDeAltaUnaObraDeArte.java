@@ -35,7 +35,6 @@ public class darDeAltaUnaObraDeArte extends verObras{
             setID(sc.nextLine());
             if (getID().length() <= n) {
                 inserción_exitosa = true;
-                System.out.println(getID());
                 break;
             }
             else {
@@ -56,7 +55,6 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
             else {
                 System.out.println(mensaje_error);
-                System.out.println(getID());
             }
         }
     }
@@ -79,6 +77,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
         setPrecio(sc.nextDouble());
     }
 
+    public void insertarAltura() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(ALTURA);
+        setAltura(sc.nextDouble());
+    }
+
+    public void insertarPeso() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(PESO);
+        setPeso(sc.nextDouble());
+    }
+
 
 
     public void darDeAlta() {
@@ -86,13 +96,11 @@ public class darDeAltaUnaObraDeArte extends verObras{
         insertarTipo(MENSAJE_ERROR_TIPO);
         insertarNombre();
         insertarAutor();
-        insertarPrecio();/* 
-        System.out.print(ALTURA);
-        setAltura(sc.nextDouble());
-        Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
-        System.out.print(PESO);
-        setPeso(sc.nextDouble());
-        sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
+        insertarPrecio(); 
+        insertarAltura();
+        //Scanner sc = new Scanner(System.in); //Esta inserción de escáner es para arreglar un error con el escáner
+        insertarPeso();
+        /*sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
         System.out.print(MATERIAL);
         setMaterial(sc.nextLine());
         System.out.print(TÉCNICA);
