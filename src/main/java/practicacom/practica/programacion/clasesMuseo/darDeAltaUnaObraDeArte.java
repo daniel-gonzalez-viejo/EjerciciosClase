@@ -19,22 +19,25 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
     final String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
 
-    boolean inserción_exitosa = false;
+    final int TAMAÑO_MAXIMO_ID = 3;
+
+    static boolean inserción_exitosa = false;    
 
     public darDeAltaUnaObraDeArte() {
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void comprobarLongitudID(String iD, int n, String mensaje_error) {
+    public void insertarID(int n, String mensaje_error) {
         while (!inserción_exitosa) {
-            int comprobarID = iD.length();
-            if (comprobarID <= n) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print(ID);
+            setID(sc.nextLine());
+            if (getID().length() <= n) {
                 inserción_exitosa = true;
+                break;
             }
             else {
                 System.out.println(mensaje_error);
-                comprobarID = 0;
-                System.out.println(comprobarID);
-                insertarID();
+                System.out.println(getID().length());
             }
         }
     }
@@ -47,10 +50,8 @@ public class darDeAltaUnaObraDeArte extends verObras{
         }
     }
 
-    public void insertarID() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(ID);
-        setID(sc.nextLine());
+    public void insertarID(int n) {
+        
     }
 
     public void insertarTipo() {
@@ -74,8 +75,8 @@ public class darDeAltaUnaObraDeArte extends verObras{
 
 
     public void darDeAlta() {
-        insertarID();
-        comprobarLongitudID(getID(), 3, MENSAJE_ERROR_ID);
+        //insertarID(TAMAÑO_MAXIMO_ID);
+        insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID);
         insertarTipo();
         comprobarTipoDeObra(getTipo(), MENSAJE_ERROR_TIPO);
         insertarNombre();
