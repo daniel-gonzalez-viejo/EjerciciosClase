@@ -31,7 +31,6 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final static String OPCION_TECNICA_ACUARELA = "Acuarela";
     final static String OPCION_TECNICA_CARBONCILLO = "Carboncillo";
 
-
     static boolean inserción_exitosa = false;    
 
     public darDeAltaUnaObraDeArte() {
