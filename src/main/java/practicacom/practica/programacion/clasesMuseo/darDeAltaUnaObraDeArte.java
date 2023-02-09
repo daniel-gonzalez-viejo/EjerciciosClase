@@ -148,7 +148,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
             inserción_exitosa = false;
         }
-        return getMaterial();
+        return getTécnica();
     }
 
     public int insertarPiezas() {
