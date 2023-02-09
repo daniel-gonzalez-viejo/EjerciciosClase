@@ -36,7 +36,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
     public darDeAltaUnaObraDeArte() {
     }
 
-    public void insertarID(int n, String mensaje_error) {
+    public String insertarID(int n, String mensaje_error) {
         while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(ID);
@@ -50,9 +50,10 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
         }
         inserción_exitosa = false;
+        return getID();
     }
 
-    public void insertarTipo(String mensaje_error) {
+    public String insertarTipo(String mensaje_error) {
         while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(TIPO);
@@ -66,39 +67,45 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
         }
         inserción_exitosa = false;
+        return getTipo();
     }
 
-    public void insertarNombre() {
+    public String insertarNombre() {
         Scanner sc = new Scanner(System.in);
         System.out.print(NOMBRE);
         setNombre(sc.nextLine());
+        return getNombre();
     }
 
-    public void insertarAutor() {
+    public String insertarAutor() {
         Scanner sc = new Scanner(System.in);
         System.out.print(AUTOR);
         setAutor(sc.nextLine());
+        return getAutor();
     }
 
-    public void insertarPrecio() {
+    public double insertarPrecio() {
         Scanner sc = new Scanner(System.in);
         System.out.print(PRECIO);
         setPrecio(sc.nextDouble());
+        return getPrecio();
     }
 
-    public void insertarAltura() {
+    public double insertarAltura() {
         Scanner sc = new Scanner(System.in);
         System.out.print(ALTURA);
         setAltura(sc.nextDouble());
+        return getAltura();
     }
 
-    public void insertarPeso() {
+    public double insertarPeso() {
         Scanner sc = new Scanner(System.in);
         System.out.print(PESO);
         setPeso(sc.nextDouble());
+        return getPeso();
     }
 
-    public void insertarMaterial(String mensaje_error) {
+    public String insertarMaterial(String mensaje_error) {
         if (getTipo().equals(OPCION_TIPO_PINTURA)) {
             setMaterial("   ");
         }
@@ -118,9 +125,10 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
             inserción_exitosa = false;
         }
+        return getMaterial();
     }
 
-    public void insertarTecnica(String mensaje_error) {
+    public String insertarTecnica(String mensaje_error) {
         if (getTipo().equals(OPCION_TIPO_ESCULTURA)) {
             setTécnica("   ");
         }
@@ -140,18 +148,21 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
             inserción_exitosa = false;
         }
+        return getMaterial();
     }
 
-    public void insertarPiezas() {
+    public int insertarPiezas() {
         Scanner sc = new Scanner(System.in);
         System.out.print(PIEZAS);
         setPiezas(sc.nextInt());
+        return getPiezas();
     }
 
-    public void insertarDescripción() {
+    public String insertarDescripción() {
         Scanner sc = new Scanner(System.in);
         System.out.print(DESCRIPCIÓN);
         setDescripción(sc.nextLine());
+        return getDescripción();
     }
 
 
