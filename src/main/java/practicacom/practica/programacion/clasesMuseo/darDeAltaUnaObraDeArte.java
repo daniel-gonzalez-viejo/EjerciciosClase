@@ -19,15 +19,22 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
     final String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
 
-    Scanner sc = new Scanner(System.in);
+    boolean inserción_exitosa = false;
 
     public darDeAltaUnaObraDeArte() {
     }
 
     public void comprobarLongitudID(String id, int n, String mensaje_error) {
-        while (id.length() > n) {
-            System.out.println(mensaje_error);
-            insertarID();
+        while (!inserción_exitosa) {
+            int comprobarID = id.length();
+            if (comprobarID <= n) {
+                inserción_exitosa = true;
+            }
+            else {
+                System.out.println(mensaje_error);
+                System.out.println(comprobarID);
+                insertarID();
+            }
         }
     }
 
@@ -39,21 +46,25 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public void insertarID() {
+        Scanner sc = new Scanner(System.in);
         System.out.print(ID);
         setID(sc.nextLine());
     }
 
     public void insertarTipo() {
+        Scanner sc = new Scanner(System.in);
         System.out.print(TIPO);
         setTipo(sc.nextLine());
     }
 
     public void insertarNombre() {
+        Scanner sc = new Scanner(System.in);
         System.out.print(NOMBRE);
         setNombre(sc.nextLine());
     }
 
     public void insertarAutor() {
+        Scanner sc = new Scanner(System.in);
         System.out.print(AUTOR);
         setAutor(sc.nextLine());
     }
@@ -64,8 +75,9 @@ public class darDeAltaUnaObraDeArte extends verObras{
         insertarID();
         comprobarLongitudID(getID(), 3, MENSAJE_ERROR_ID);
         insertarTipo();
+        comprobarTipoDeObra(getTipo(), MENSAJE_ERROR_TIPO);
         insertarNombre();
-        insertarAutor();
+        insertarAutor();/* 
         System.out.print(PRECIO);
         setPrecio(sc.nextDouble());
         System.out.print(ALTURA);
@@ -83,6 +95,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
         sc.nextLine(); //Esta inserción de escáner es para arreglar un error con el escáner
         System.out.print(DESCRIPCIÓN);
         setDescripción(sc.nextLine());
+        */
     }
 
     public obras nuevaObra() {
