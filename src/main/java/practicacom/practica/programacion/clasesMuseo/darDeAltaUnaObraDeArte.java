@@ -23,21 +23,23 @@ public class darDeAltaUnaObraDeArte extends verObras{
 
     public darDeAltaUnaObraDeArte() {
     }
-
-    public void comprobarLongitudID(String id, int n, String mensaje_error) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void comprobarLongitudID(String iD, int n, String mensaje_error) {
         while (!inserción_exitosa) {
-            int comprobarID = id.length();
+            int comprobarID = iD.length();
             if (comprobarID <= n) {
                 inserción_exitosa = true;
             }
             else {
                 System.out.println(mensaje_error);
+                comprobarID = 0;
                 System.out.println(comprobarID);
                 insertarID();
             }
         }
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//////  HAY QUE COMPROBAR LAS INSERCIONES, SI FALLA LA PRIMERA VEZ YA NO SE INSERTARÁ BIEN NUNCA  /////
     public void comprobarTipoDeObra(String tipo, String mensaje_error) {
         while (tipo != "Pintura" || tipo != "Escultura") {
             System.out.println(mensaje_error);
