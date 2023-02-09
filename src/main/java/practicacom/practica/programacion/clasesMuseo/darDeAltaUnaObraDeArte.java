@@ -20,13 +20,15 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
 
     final int TAMAÑO_MAXIMO_ID = 3;
+    final String OPCION_TIPO_PINTURA = "Pintura";
+    final String OPCION_TIPO_ESCULTURA = "Escultura";
 
     static boolean inserción_exitosa = false;    
 
     public darDeAltaUnaObraDeArte() {
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void insertarID(int n, String mensaje_error) {
+
+    public boolean insertarID(int n, String mensaje_error) {
         while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(ID);
@@ -37,27 +39,25 @@ public class darDeAltaUnaObraDeArte extends verObras{
             }
             else {
                 System.out.println(mensaje_error);
-                System.out.println(getID().length());
             }
         }
+        return inserción_exitosa = false;
     }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-//////  HAY QUE COMPROBAR LAS INSERCIONES, SI FALLA LA PRIMERA VEZ YA NO SE INSERTARÁ BIEN NUNCA  /////
-    public void comprobarTipoDeObra(String tipo, String mensaje_error) {
-        while (tipo != "Pintura" || tipo != "Escultura") {
-            System.out.println(mensaje_error);
-            insertarTipo();
+
+    public void insertarTipo(String mensaje_error) {
+        while (!inserción_exitosa) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print(TIPO);
+            setID(sc.nextLine());
+            if (getID().equals(OPCION_TIPO_PINTURA) || getID().equals(OPCION_TIPO_ESCULTURA)) {
+                inserción_exitosa = true;
+                break;
+            }
+            else {
+                System.out.println(mensaje_error);
+                System.out.println(getID());
+            }
         }
-    }
-
-    public void insertarID(int n) {
-        
-    }
-
-    public void insertarTipo() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(TIPO);
-        setTipo(sc.nextLine());
     }
 
     public void insertarNombre() {
@@ -77,8 +77,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
     public void darDeAlta() {
         //insertarID(TAMAÑO_MAXIMO_ID);
         insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID);
-        insertarTipo();
-        comprobarTipoDeObra(getTipo(), MENSAJE_ERROR_TIPO);
+        insertarTipo(MENSAJE_ERROR_TIPO);
         insertarNombre();
         insertarAutor();/* 
         System.out.print(PRECIO);
