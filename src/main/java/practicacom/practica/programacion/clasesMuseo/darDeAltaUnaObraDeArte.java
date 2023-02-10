@@ -50,7 +50,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
             if (getID().length() <= n) {
                 inserción_exitosa = true;
                 break;
-            }
+            }    
             else {
                 System.out.println(mensaje_error);
             }

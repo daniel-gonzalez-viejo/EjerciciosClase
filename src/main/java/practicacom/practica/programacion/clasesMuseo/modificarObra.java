@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class modificarObra extends darDeAltaUnaObraDeArte {
 
+    final static String MENSAJE_PEDIR_OBRA = CYAN + "¿Qué obra quieres visualizar?: " + BLANCO;
+
     Scanner sc = new Scanner(System.in);
     String código;
     
@@ -18,8 +20,9 @@ public class modificarObra extends darDeAltaUnaObraDeArte {
     }
 
     public void pedirObra() {
-        System.out.print("¿Qué obra quieres visualizar?:  ");
+        System.out.print(MENSAJE_PEDIR_OBRA);
         setCódigo(sc.nextLine());
+        System.out.println();
     }
 
     public void modificar(obras aux) {             

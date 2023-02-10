@@ -126,7 +126,7 @@ public class obras{
     @Override
     public String toString() {
         String s = "";
-        s += ID + "     ";
+        s += ROJO + ID + "     " + BLANCO;
         s += Tipo + "     ";
         s += Nombre + "     ";
         s += Autor + "     ";
