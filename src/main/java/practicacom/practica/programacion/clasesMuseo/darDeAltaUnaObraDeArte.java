@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-import java.io.ObjectInputStream.GetField;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class darDeAltaUnaObraDeArte extends verObras{
@@ -85,9 +85,19 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public double insertarPrecio() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(PRECIO);
-        setPrecio(sc.nextDouble());
+        while(!inserción_exitosa) {
+            try{
+                Scanner sc = new Scanner(System.in);
+                System.out.print(PRECIO);
+                setPrecio(sc.nextDouble());
+                inserción_exitosa = true;
+            }
+            
+            catch (InputMismatchException e) {
+                System.out.println("El precio debe ser numérico");
+            }
+        }
+        inserción_exitosa = false;
         return getPrecio();
     }
 
