@@ -179,9 +179,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public int insertarPiezas() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(PIEZAS);
-        setPiezas(sc.nextInt());
+        while(!inserción_exitosa) {
+            try{
+                Scanner sc = new Scanner(System.in);
+                System.out.print(PIEZAS);
+                setPiezas(sc.nextInt());
+                inserción_exitosa = true;
+            }
+            catch (InputMismatchException e) {
+                System.out.println("El número de piezas debe ser numérico");
+            }
+        }
+        inserción_exitosa = false;
         return getPiezas();
     }
 
