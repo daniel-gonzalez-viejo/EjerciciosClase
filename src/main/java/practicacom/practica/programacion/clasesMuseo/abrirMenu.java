@@ -1,12 +1,9 @@
 package practicacom.practica.programacion.clasesMuseo;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class abrirMenu extends verObras{
     public static void main(String[] args) {
-
-    int tamaño_predeterminado = 5;
-    int opcion_menu;
-    boolean interruptor = false;
 
     final String OPCIONES = "¿Qué quieres hacer?";
     final String OPCION_1 = "1. Ver cuadros";
@@ -16,8 +13,14 @@ public class abrirMenu extends verObras{
     final String OPCION_5 = "5. Obtener el precio de venta de una de las obras de arte expuestas";
     final String OPCION_6 = "6. Imprimir una etiqueta para clasificar una de las obras expuestas y dar información adicional";
     final String SALIR = "7. Salir";
+    final String MENSAJE_DESPEDIDA = "Corre plátano";
+    final String[] OPCIONES_MENU = {OPCIONES, OPCION_1, OPCION_2, OPCION_3, OPCION_4, OPCION_5, OPCION_6, SALIR};
+    final String ERROR_MENU = "Se ha producido un error en la inserción de comando";
 
     Scanner sc = new Scanner(System.in);
+
+    int tamaño_predeterminado = 5;
+    boolean interruptor = false;
 
     obras P1 = new obras("001" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
     obras P2 = new obras("002" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
@@ -33,20 +36,27 @@ public class abrirMenu extends verObras{
     galería.agregar(P4);
     galería.agregar(P5);
     
-        while (!interruptor) {
-            System.out.println("-------------------------------------------------------------------------------------------------------");
-            System.out.println(OPCIONES);
-            System.out.println(OPCION_1);
-            System.out.println(OPCION_2);
-            System.out.println(OPCION_3);
-            System.out.println(OPCION_4);
-            System.out.println(OPCION_5);
-            System.out.println(OPCION_6);
-            System.out.println(SALIR);
-            System.out.println("-------------------------------------------------------------------------------------------------------");
+    while (!interruptor) {
+
+        int opcion_menu = 0;
+
+        System.out.println("-------------------------------------------------------------------------------------------------------");
+        for (final String OPCION_MENU : OPCIONES_MENU) {
+            System.out.println(OPCION_MENU);
+        }
+        System.out.println("-------------------------------------------------------------------------------------------------------");
+
+        try { 
             opcion_menu = sc.nextInt();
-            
-        switch (opcion_menu){
+        }
+        catch (InputMismatchException e) {
+            System.out.println(ERROR_MENU);
+            sc.nextInt();
+            continue;
+        }
+        
+      
+        switch (opcion_menu){ 
             case 1: {
                 System.out.println(P1.Cabeceros());
                 System.out.println(galería.toStrin());
@@ -86,9 +96,13 @@ public class abrirMenu extends verObras{
                 break;
             }  
             case 7: {
-                System.out.println("Adios");
+                System.out.println(MENSAJE_DESPEDIDA);
+                System.out.println("https://www.youtube.com/watch?v=4pNMdJPGooE");
                 interruptor = true;
                 break;
+            }
+            default: {
+                System.out.println(ERROR_MENU);
             }
         } 
         
