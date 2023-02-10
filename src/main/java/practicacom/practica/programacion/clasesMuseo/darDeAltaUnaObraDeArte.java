@@ -19,7 +19,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final static String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
     final static String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
     final static String MENSAJE_ERROR_MATERIAL = "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: ";
-    final static String MENSAJE_ERROR_TECNICA = "Únicamente se aceptan técnicas de tipo [Óleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: ";
+    final static String MENSAJE_ERROR_TECNICA = "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: ";
 
     final static int TAMAÑO_MAXIMO_ID = 3;
     final static String OPCION_TIPO_PINTURA = "Pintura";
@@ -117,9 +117,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public double insertarPeso() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(PESO);
-        setPeso(sc.nextDouble());
+        while(!inserción_exitosa) {
+            try{
+                Scanner sc = new Scanner(System.in);
+                System.out.print(PESO);
+                setPeso(sc.nextDouble());
+                inserción_exitosa = true;
+            }
+            catch (InputMismatchException e) {
+                System.out.println("El peso debe ser numérico");
+            }
+        }
+        inserción_exitosa = false;
         return getPeso();
     }
 
