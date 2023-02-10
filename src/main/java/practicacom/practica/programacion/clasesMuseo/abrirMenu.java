@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class abrirMenu extends verObras{
     public static void main(String[] args) {
 
-    final String OPCIONES = "¿Qué quieres hacer?";
-    final String OPCION_1 = "[1] Ver cuadros";
-    final String OPCION_2 = "[2] Dar de alta";
-    final String OPCION_3 = "[3] Modificar los datos de una de las obras";
-    final String OPCION_4 = "[4] Visualizar los datos de una de las obras de arte expuestas";
-    final String OPCION_5 = "[5] Obtener el precio de venta de una de las obras de arte expuestas";
-    final String OPCION_6 = "[6] Imprimir una etiqueta para clasificar una de las obras expuestas y dar información adicional";
-    final String SALIR = "[7] Salir";
+    final String OPCIONES = CYAN + "¿Qué quieres hacer?" + BLANCO;
+    final String OPCION_1 = VERDE + "[1]" + BLANCO + " Ver cuadros";
+    final String OPCION_2 = VERDE + "[2]" + BLANCO + " Dar de alta";
+    final String OPCION_3 = VERDE + "[3]" + BLANCO + " Modificar los datos de una de las obras";
+    final String OPCION_4 = VERDE + "[4]" + BLANCO + " Visualizar los datos de una de las obras de arte expuestas";
+    final String OPCION_5 = VERDE + "[5]" + BLANCO + " Obtener el precio de venta de una de las obras de arte expuestas";
+    final String OPCION_6 = VERDE + "[6]" + BLANCO + " Imprimir una etiqueta para clasificar una de las obras expuestas y dar información adicional";
+    final String SALIR = ROJO + "[7]" + BLANCO + " Salir";
     final String MENSAJE_DESPEDIDA = "Corre plátano";
-    final String[] OPCIONES_MENU = {OPCIONES, OPCION_1, OPCION_2, OPCION_3, OPCION_4, OPCION_5, OPCION_6, SALIR};
+    final String ESPACIO_DIFERENCIADOR = "-------------------------------------------------------------------------------------------------";
+    final String[] OPCIONES_MENU = {OPCIONES, ESPACIO_DIFERENCIADOR,  OPCION_1, OPCION_2, OPCION_3, OPCION_4, OPCION_5, OPCION_6, SALIR};
     final String ERROR_MENU = "Se ha producido un error en la inserción de comando";
 
     Scanner sc = new Scanner(System.in);
@@ -40,14 +41,15 @@ public class abrirMenu extends verObras{
 
         int opcion_menu = 0;
 
-        System.out.println("-------------------------------------------------------------------------------------------------------");
+        System.out.println(ESPACIO_DIFERENCIADOR);
         for (final String OPCION_MENU : OPCIONES_MENU) {
             System.out.println(OPCION_MENU);
         }
-        System.out.println("-------------------------------------------------------------------------------------------------------");
+        System.out.println(ESPACIO_DIFERENCIADOR);
 
         try { 
             opcion_menu = sc.nextInt();
+            System.out.println(ESPACIO_DIFERENCIADOR);
         }
         catch (InputMismatchException ime) {
             System.out.println(ERROR_MENU);

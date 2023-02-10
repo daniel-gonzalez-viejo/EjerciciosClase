@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class obras {
+public class obras{
     public static final String ROJO = "\u001B[31m";
     public static final String VERDE = "\u001B[32m";
     public static final String AMARILLO = "\u001B[33m";
@@ -108,7 +108,7 @@ public class obras {
 
     public String Cabeceros() {
         String s = "";
-        System.out.print("ID" + "     ");
+        System.out.print(VERDE + "ID" + "     ");
         System.out.print("Tipo" + "     ");
         System.out.print("Nombre" + "     ");
         System.out.print("Autor" + "     ");
@@ -118,7 +118,7 @@ public class obras {
         System.out.print("Material" + "     ");
         System.out.print("Técnica" + "     ");
         System.out.print("Piezas" + "     ");
-        System.out.print("Descripción");
+        System.out.print("Descripción" + BLANCO);
         return s;
     }
     
