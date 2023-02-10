@@ -92,7 +92,6 @@ public class darDeAltaUnaObraDeArte extends verObras{
                 setPrecio(sc.nextDouble());
                 inserción_exitosa = true;
             }
-            
             catch (InputMismatchException e) {
                 System.out.println("El precio debe ser numérico");
             }
@@ -102,9 +101,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public double insertarAltura() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(ALTURA);
-        setAltura(sc.nextDouble());
+        while(!inserción_exitosa) {
+            try{
+                Scanner sc = new Scanner(System.in);
+                System.out.print(ALTURA);
+                setAltura(sc.nextDouble());
+                inserción_exitosa = true;
+            }
+            catch (InputMismatchException e) {
+                System.out.println("La altura debe ser numérica");
+            }
+        }
+        inserción_exitosa = false;
         return getAltura();
     }
 
