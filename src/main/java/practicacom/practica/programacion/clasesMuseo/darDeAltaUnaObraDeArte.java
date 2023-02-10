@@ -4,26 +4,27 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class darDeAltaUnaObraDeArte extends verObras{
-    final static String ID = "ID: ";
-    final static String TIPO = "Tipo: ";
-    final static String NOMBRE = "Nombre: ";
-    final static String AUTOR = "Autor: ";
-    final static String PRECIO = "Precio: ";
-    final static String ALTURA = "Altura: ";
-    final static String PESO = "Peso: ";
-    final static String MATERIAL = "Material: ";
-    final static String TÉCNICA = "Técnica: ";
-    final static String PIEZAS = "Piezas: ";
-    final static String DESCRIPCIÓN = "Descripción: ";
+    final static String ID = VERDE + "ID: " + BLANCO;
+    final static String TIPO = VERDE + "Tipo: " + BLANCO;
+    final static String NOMBRE = VERDE + "Nombre: " + BLANCO;
+    final static String AUTOR = VERDE + "Autor: " + BLANCO;
+    final static String PRECIO = VERDE + "Precio: " + BLANCO;
+    final static String ALTURA = VERDE + "Altura: " + BLANCO;
+    final static String PESO = VERDE + "Peso: " + BLANCO;
+    final static String MATERIAL = VERDE + "Material: " + BLANCO;
+    final static String TÉCNICA = VERDE + "Técnica: " + BLANCO;
+    final static String PIEZAS = VERDE + "Piezas: " + BLANCO;
+    final static String DESCRIPCIÓN = VERDE + "Descripción: " + BLANCO;
 
-    final static String MENSAJE_ERROR_ID = "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): ";
-    final static String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
-    final static String MENSAJE_ERROR_MATERIAL = "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: ";
-    final static String MENSAJE_ERROR_TECNICA = "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: ";
-    final static String MENSAJE_ERROR_PRECIO = "El precio debe ser de carácter numérico: ";
-    final static String MENSAJE_ERROR_ALTURA = "La altura debe ser de carácter numérico: ";
-    final static String MENSAJE_ERROR_PESO = "El peso debe ser de carácter numérico: ";
-    final static String MENSAJE_ERROR_PIEZAS = "La cantidad de piezas debe ser de carácter numérico: ";
+    final static String MENSAJE_ERROR_ID_BLANCO = ROJO + "El ID no puede estar en blanco" + BLANCO;
+    final static String MENSAJE_ERROR_ID = ROJO + "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): " + BLANCO;
+    final static String MENSAJE_ERROR_TIPO = ROJO + "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: " + BLANCO;
+    final static String MENSAJE_ERROR_MATERIAL = ROJO + "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: " + BLANCO;
+    final static String MENSAJE_ERROR_TECNICA = ROJO + "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: " + BLANCO;
+    final static String MENSAJE_ERROR_PRECIO = ROJO + "El precio debe ser de carácter numérico: " + BLANCO;
+    final static String MENSAJE_ERROR_ALTURA = ROJO + "La altura debe ser de carácter numérico: " + BLANCO;
+    final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico: " + BLANCO;
+    final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico: " + BLANCO;
 
 
 
@@ -47,12 +48,18 @@ public class darDeAltaUnaObraDeArte extends verObras{
             Scanner sc = new Scanner(System.in);
             System.out.print(ID);
             setID(sc.nextLine());
-            if (getID().length() <= n) {
+            if (getID().isBlank()) {
+                System.out.println(MENSAJE_ERROR_ID_BLANCO);
+            }
+            else if (getID().length() <= n && !getID().isBlank()) {
                 inserción_exitosa = true;
                 break;
             }    
-            else {
+            else if (getID().length() > n) {
                 System.out.println(mensaje_error);
+            }
+            else {
+                System.out.println(MENSAJE_ERROR_ID_BLANCO);
             }
         }
         inserción_exitosa = false;
