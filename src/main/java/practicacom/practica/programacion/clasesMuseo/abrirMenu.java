@@ -19,11 +19,11 @@ public class abrirMenu extends verObras{
 
     Scanner sc = new Scanner(System.in);
 
-    obras P1 = new obras("001" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 ,   "null" ,   "Óleo" , 5 , "Cuadro de la guerra civil");
-    obras P2 = new obras("002" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "null" , "Óleo" , 5 , "Óleo");
-    obras P3 = new obras("003" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , "null" ,   "Óleo" , 5 , "Óleo");
-    obras P4 = new obras("004" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "null" , "Óleo" , 5 , "Óleo");
-    obras P5 = new obras("005" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 ,  "acero" , "null" ,  5 , "Escultura");
+    obras P1 = new obras("001" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
+    obras P2 = new obras("002" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
+    obras P3 = new obras("003" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , "    " ,   "Óleo" , 5 , "Óleo");
+    obras P4 = new obras("004" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
+    obras P5 = new obras("005" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "acero" , "    " ,  5 , "Escultura");
     
     verObras galería = new verObras(tamaño_predeterminado);
 
