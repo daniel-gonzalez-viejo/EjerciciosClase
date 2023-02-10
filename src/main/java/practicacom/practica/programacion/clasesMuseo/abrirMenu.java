@@ -28,13 +28,13 @@ public class abrirMenu extends verObras{
     obras P4 = new obras("004" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
     obras P5 = new obras("005" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "acero" , "    " ,  5 , "Escultura");
     
+    final obras[] OBRAS_INICIALES = {P1, P2, P3, P4, P5};
+
     verObras galería = new verObras(tamaño_predeterminado);
 
-    galería.agregar(P1);
-    galería.agregar(P2);
-    galería.agregar(P3);
-    galería.agregar(P4);
-    galería.agregar(P5);
+    for (int i = 0; i < tamaño_predeterminado; i++) {
+        galería.agregar(OBRAS_INICIALES[i]);
+    }
     
     while (!interruptor) {
 
@@ -49,7 +49,7 @@ public class abrirMenu extends verObras{
         try { 
             opcion_menu = sc.nextInt();
         }
-        catch (InputMismatchException e) {
+        catch (InputMismatchException ime) {
             System.out.println(ERROR_MENU);
             sc.nextInt();
             continue;
