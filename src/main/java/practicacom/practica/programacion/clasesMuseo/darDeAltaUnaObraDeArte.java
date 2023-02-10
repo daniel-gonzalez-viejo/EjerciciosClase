@@ -20,6 +20,12 @@ public class darDeAltaUnaObraDeArte extends verObras{
     final static String MENSAJE_ERROR_TIPO = "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: ";
     final static String MENSAJE_ERROR_MATERIAL = "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: ";
     final static String MENSAJE_ERROR_TECNICA = "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: ";
+    final static String MENSAJE_ERROR_PRECIO = "El precio debe ser de carácter numérico: ";
+    final static String MENSAJE_ERROR_ALTURA = "La altura debe ser de carácter numérico: ";
+    final static String MENSAJE_ERROR_PESO = "El peso debe ser de carácter numérico: ";
+    final static String MENSAJE_ERROR_PIEZAS = "La cantidad de piezas debe ser de carácter numérico: ";
+
+
 
     final static int TAMAÑO_MAXIMO_ID = 3;
     final static String OPCION_TIPO_PINTURA = "Pintura";
@@ -93,7 +99,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
                 inserción_exitosa = true;
             }
             catch (InputMismatchException e) {
-                System.out.println("El precio debe ser numérico");
+                System.out.println(MENSAJE_ERROR_PRECIO);
             }
         }
         inserción_exitosa = false;
@@ -109,7 +115,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
                 inserción_exitosa = true;
             }
             catch (InputMismatchException e) {
-                System.out.println("La altura debe ser numérica");
+                System.out.println(MENSAJE_ERROR_ALTURA);
             }
         }
         inserción_exitosa = false;
@@ -125,7 +131,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
                 inserción_exitosa = true;
             }
             catch (InputMismatchException e) {
-                System.out.println("El peso debe ser numérico");
+                System.out.println(MENSAJE_ERROR_PESO);
             }
         }
         inserción_exitosa = false;
@@ -187,7 +193,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
                 inserción_exitosa = true;
             }
             catch (InputMismatchException e) {
-                System.out.println("El número de piezas debe ser numérico");
+                System.out.println(MENSAJE_ERROR_PIEZAS);
             }
         }
         inserción_exitosa = false;
@@ -200,8 +206,6 @@ public class darDeAltaUnaObraDeArte extends verObras{
         setDescripción(sc.nextLine());
         return getDescripción();
     }
-
-
 
     public void darDeAlta() {
         insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID);
