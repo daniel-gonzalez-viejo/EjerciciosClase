@@ -4,13 +4,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class obras {
-    public static final String ROJO = "\u001B[31m";
-    public static final String VERDE = "\u001B[32m";
-    public static final String AMARILLO = "\u001B[33m";
-    public static final String AZUL = "\u001B[34m";
-    public static final String MORADO = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String BLANCO = "\u001B[37m";
+    final static String ROJO = "\u001B[31m";
+    final static String VERDE = "\u001B[32m";
+    final static String AMARILLO = "\u001B[33m";
+    final static String AZUL = "\u001B[34m";
+    final static String MORADO = "\u001B[35m";
+    final static String CYAN = "\u001B[36m";
+    final static String BLANCO = "\u001B[37m";
 
     final static String ID = VERDE + "ID: " + BLANCO;
     final static String TIPO = VERDE + "Tipo: " + BLANCO;

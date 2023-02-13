@@ -1,4 +1,5 @@
 package practicacom.practica.programacion.clasesMuseo;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,20 +17,12 @@ public class abrirMenu extends verObras{
     final String MENSAJE_DESPEDIDA = "Corre plátano";
     final String ESPACIO_DIFERENCIADOR = "-------------------------------------------------------------------------------------------------";
     final String[] OPCIONES_MENU = {OPCIONES, ESPACIO_DIFERENCIADOR,  OPCION_1, OPCION_2, OPCION_3, OPCION_4, OPCION_5, OPCION_6, SALIR};
-    final String ERROR_MENU = "Se ha producido un error en la inserción de comando";
+    final String ERROR_MENU = ROJO + "Se ha producido un error en la inserción de comando" + BLANCO;
 
     Scanner sc = new Scanner(System.in);
 
     int tamaño_predeterminado = 5;
     boolean interruptor = false;
-
-    obras P1 = new obras("001" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
-    obras P2 = new obras("002" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
-    obras P3 = new obras("003" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , "    " ,   "Óleo" , 5 , "Óleo");
-    obras P4 = new obras("004" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
-    obras P5 = new obras("005" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "acero" , "    " ,  5 , "Escultura");
-    
-    final obras[] OBRAS_INICIALES = {P1, P2, P3, P4, P5};
 
     verObras galería = new verObras(tamaño_predeterminado);
 
@@ -47,17 +40,16 @@ public class abrirMenu extends verObras{
         }
         System.out.println(ESPACIO_DIFERENCIADOR);
 
-        try { 
-            opcion_menu = sc.nextInt();
-            System.out.println(ESPACIO_DIFERENCIADOR);
-        }
-        catch (InputMismatchException ime) {
-            System.out.println(ERROR_MENU);
-            sc.nextInt();
-            continue;
-        }
-        
-      
+            try { 
+                opcion_menu = sc.nextInt();
+                System.out.println(ESPACIO_DIFERENCIADOR);
+            }
+            catch (InputMismatchException ime) {
+                System.out.println(ERROR_MENU);
+                sc.next();
+                continue;
+            }
+
         switch (opcion_menu){ 
             case 1: {
                 System.out.println(P1.Cabeceros());
