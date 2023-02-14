@@ -2,7 +2,6 @@ package practicacom.practica.programacion.clasesMuseo;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.function.DoubleToLongFunction;
 
 public class obras {
     final static String ROJO = "\u001B[31m";
@@ -25,13 +24,14 @@ public class obras {
     final static String PIEZAS = VERDE + "Piezas: " + BLANCO;
     final static String DESCRIPCIÓN = VERDE + "Descripción: " + BLANCO;
 
-    final static String MENSAJE_ERROR_TIPO = ROJO + "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: " + BLANCO;
-    final static String MENSAJE_ERROR_MATERIAL = ROJO + "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: " + BLANCO;
-    final static String MENSAJE_ERROR_TECNICA = ROJO + "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: " + BLANCO;
-    final static String MENSAJE_ERROR_PRECIO = ROJO + "El precio debe ser de carácter numérico: " + BLANCO;
-    final static String MENSAJE_ERROR_ALTURA = ROJO + "La altura debe ser de carácter numérico: " + BLANCO;
-    final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico: " + BLANCO;
-    final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico: " + BLANCO;
+    final static String MENSAJE_ERROR_TIPO_EN_BLANCO = ROJO + "No se permite la inserción de nombres en blanco" + BLANCO;
+    final static String MENSAJE_ERROR_TIPO = ROJO + "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente " + BLANCO;
+    final static String MENSAJE_ERROR_MATERIAL = ROJO + "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente " + BLANCO;
+    final static String MENSAJE_ERROR_TECNICA = ROJO + "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente " + BLANCO;
+    final static String MENSAJE_ERROR_PRECIO = ROJO + "El precio debe ser de carácter numérico " + BLANCO;
+    final static String MENSAJE_ERROR_ALTURA = ROJO + "La altura debe ser de carácter numérico " + BLANCO;
+    final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico " + BLANCO;
+    final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico " + BLANCO;
 
     final static String OPCION_TIPO_PINTURA = "Pintura";
     final static String OPCION_TIPO_ESCULTURA = "Escultura";
@@ -131,9 +131,20 @@ public class obras {
     }
 
     public String insertarNombre() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(NOMBRE);
-        setNombre(sc.nextLine());
+        while (!inserción_exitosa) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print(NOMBRE);
+            setNombre(sc.nextLine());
+            if (!getNombre().isEmpty() && !getNombre().isBlank()) {
+                inserción_exitosa = true;
+                break;
+            }
+            else {
+                System.out.println(MENSAJE_ERROR_TIPO_EN_BLANCO);
+                setNombre("");
+            }
+        }
+        inserción_exitosa = false;
         return getNombre();
     }
 
@@ -315,18 +326,20 @@ public class obras {
     }
 
     public static String Cabeceros() {
-        String s = VERDE + "ID" + "   " + "NOMBRE";
+        String s = AZUL + "ID" + "   " + "NOMBRE";
         System.out.println(s);
 
-        return "";
+
+        return AZUL + "------------------------------------";
     }
     
 
     @Override
     public String toString() {
         
-        String s = ROJO + id + BLANCO + "    " + Nombre;
+        String s = ROJO + id + AZUL + "  |" +BLANCO + "    " + Nombre;
         System.out.println(s);
+        System.out.println(AZUL + "------------------------------------" + BLANCO);
         
         return "";
     }
