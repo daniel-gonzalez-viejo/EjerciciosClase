@@ -1,10 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
 public class verObras extends obras{
-    
-    private obras vec[];
-    private int tamaño;
-    private int posiciones;
 
     public verObras(int n) {
         tamaño = n;
@@ -40,10 +36,6 @@ public class verObras extends obras{
             }
         }
         return null;
-    }
-
-    public int getTamaño() {
-        return tamaño;
     }
 
     public String toStrin() {

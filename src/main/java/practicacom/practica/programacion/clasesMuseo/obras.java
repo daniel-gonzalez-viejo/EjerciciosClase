@@ -2,6 +2,7 @@ package practicacom.practica.programacion.clasesMuseo;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.function.DoubleToLongFunction;
 
 public class obras {
     final static String ROJO = "\u001B[31m";
@@ -24,8 +25,6 @@ public class obras {
     final static String PIEZAS = VERDE + "Piezas: " + BLANCO;
     final static String DESCRIPCIÓN = VERDE + "Descripción: " + BLANCO;
 
-    final static String MENSAJE_ERROR_ID_BLANCO = ROJO + "El ID no puede estar en blanco" + BLANCO;
-    final static String MENSAJE_ERROR_ID = ROJO + "El ID es demasiado largo, por favor introduce un ID de máximo tres carácteres (por ejemplo 006): " + BLANCO;
     final static String MENSAJE_ERROR_TIPO = ROJO + "Únicamente se aceptan obras de tipo [Pintura] o [Escultura]. Comprueba que esté escrito correctamente: " + BLANCO;
     final static String MENSAJE_ERROR_MATERIAL = ROJO + "Únicamente se aceptan materiales de tipo [Acero], [Cobre] o [Hierro]. Comprueba que esté escrito correctamente: " + BLANCO;
     final static String MENSAJE_ERROR_TECNICA = ROJO + "Únicamente se aceptan técnicas de tipo [Oleo], [Acuarela] o [Carboncillo]. Comprueba que esté escrito correctamente: " + BLANCO;
@@ -34,9 +33,6 @@ public class obras {
     final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico: " + BLANCO;
     final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico: " + BLANCO;
 
-
-
-    final static int TAMAÑO_MAXIMO_ID = 3;
     final static String OPCION_TIPO_PINTURA = "Pintura";
     final static String OPCION_TIPO_ESCULTURA = "Escultura";
     final static String OPCION_MATERIAL_ACERO = "Acero";
@@ -45,6 +41,12 @@ public class obras {
     final static String OPCION_TECNICA_OLEO = "Oleo";
     final static String OPCION_TECNICA_ACUARELA = "Acuarela";
     final static String OPCION_TECNICA_CARBONCILLO = "Carboncillo";
+
+    static obras P1 = new obras("1" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
+    static obras P2 = new obras("2" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
+    static obras P3 = new obras("3" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , "    " ,   "Óleo" , 5 , "Óleo");
+    static obras P4 = new obras("4" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
+    static obras P5 = new obras("5" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "acero" , "    " ,  5 , "Escultura");
 
     static boolean inserción_exitosa = false;    
 
@@ -59,6 +61,10 @@ public class obras {
     private String Técnica;
     private int Piezas;
     private String Descripción;
+
+    protected int tamaño;
+    protected obras vec[];
+    protected int posiciones;
 
     public obras(String id, String tipo, String nombre, String autor, double precio, double altura, double peso,
             String material, String técnica, int piezas, String descripción) {
@@ -78,34 +84,21 @@ public class obras {
     public obras() {
     }
 
+    final static obras[] OBRAS_INICIALES = {P1, P2, P3, P4, P5};
+
     public String getID() {
         return id;
     }
+
     public void setID(String iD) {
         id = iD;
     }
 
-    public String insertarID(int n, String mensaje_error) {
-        while (!inserción_exitosa) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print(ID);
-            setID(sc.nextLine());
-            if (getID().isBlank()) {
-                System.out.println(MENSAJE_ERROR_ID_BLANCO);
-            }
-            else if (getID().length() <= n && !getID().isBlank()) {
-                inserción_exitosa = true;
-                break;
-            }    
-            else if (getID().length() > n) {
-                System.out.println(mensaje_error);
-            }
-            else {
-                System.out.println(MENSAJE_ERROR_ID_BLANCO);
-            }
-        }
-        inserción_exitosa = false;
-        return getID();
+    public void insertarID() {
+        int contador = 6;
+        String idd = Integer.toString(contador);
+        setID(idd);
+        contador++;
     }
 
     public String getTipo() {
@@ -317,39 +310,25 @@ public class obras {
         return getDescripción();
     }
 
-    public String Cabeceros() {
-        String s = "";
-        System.out.print(VERDE + "ID" + "     ");
-        System.out.print("Tipo" + "     ");
-        System.out.print("Nombre" + "     ");
-        System.out.print("Autor" + "     ");
-        System.out.print("Precio" + "     ");
-        System.out.print("Altura" + "     ");
-        System.out.print("Peso" + "     ");
-        System.out.print("Material" + "     ");
-        System.out.print("Técnica" + "     ");
-        System.out.print("Piezas" + "     ");
-        System.out.print("Descripción" + BLANCO);
-        return s;
+    public int getTamaño() {
+        return tamaño;
+    }
+
+    public static String Cabeceros() {
+        String s = VERDE + "ID" + "   " + "NOMBRE";
+        System.out.println(s);
+
+        return "";
     }
     
 
     @Override
     public String toString() {
-        String s = "";
-        s += ROJO + id + "     " + BLANCO;
-        s += Tipo + "     ";
-        s += Nombre + "     ";
-        s += Autor + "     ";
-        s += Precio + "     ";
-        s += Altura + "     ";
-        s += Peso + "     ";
-        s += Material + "     ";
-        s += Técnica + "     ";
-        s += Piezas + "     ";
-        s += Descripción + "\n";
-
-        return s;
+        
+        String s = ROJO + id + BLANCO + "    " + Nombre;
+        System.out.println(s);
+        
+        return "";
     }
 
     
