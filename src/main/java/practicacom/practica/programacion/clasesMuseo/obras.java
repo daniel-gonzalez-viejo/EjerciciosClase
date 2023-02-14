@@ -96,8 +96,8 @@ public class obras {
 
     public void insertarID() {
         int contador = 6;
-        String idd = Integer.toString(contador);
-        setID(idd);
+        String id = Integer.toString(contador);
+        setID(id);
         contador++;
     }
 
@@ -326,20 +326,19 @@ public class obras {
     }
 
     public static String Cabeceros() {
-        String s = AZUL + "ID" + "   " + "NOMBRE";
+        String s = ROJO + "ID" + "      " + "NOMBRE" + BLANCO;
         System.out.println(s);
 
-
-        return AZUL + "------------------------------------";
+        System.out.println(VERDE + "___________________________________________");
+        return  "";
     }
     
 
     @Override
     public String toString() {
         
-        String s = ROJO + id + AZUL + "  |" +BLANCO + "    " + Nombre;
+        String s = ROJO + id + VERDE + "  |" +BLANCO + "    " + Nombre;
         System.out.println(s);
-        System.out.println(AZUL + "------------------------------------" + BLANCO);
         
         return "";
     }
