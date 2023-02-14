@@ -8,7 +8,7 @@ public class darDeAltaUnaObraDeArte extends verObras{
     }
 
     public void darDeAlta() {
-        insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID);
+        insertarID();
         insertarTipo(MENSAJE_ERROR_TIPO);
         insertarNombre();
         insertarAutor();

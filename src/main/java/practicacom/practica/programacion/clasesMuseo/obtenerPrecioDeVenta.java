@@ -3,12 +3,12 @@ package practicacom.practica.programacion.clasesMuseo;
 public class obtenerPrecioDeVenta extends modificarObra{
 
     final String COMISION_GALERÍA = VERDE + "Comisión de la galería: " + BLANCO;
-    final String IMPORTE_POR_PESO = VERDE + "Importe por peso (€): " + BLANCO;
-    final String IMPORTE_POR_ALTURA = VERDE + "Importe por altura (€): " + BLANCO;
-    final String PRECIO_VENTA = VERDE +"Precio de venta (€): "+ BLANCO;
-    final String PRECIO_VENTA_DOLARES = VERDE + "Precio de venta ($): " + BLANCO;
-    final String DESCUENTO_PINTURA = VERDE + "Descuento (10% Pintura €): " + BLANCO;
-    final String DESCUENTO_ESCULTURA = VERDE + "Descuento (20% Escultura €): " + BLANCO;
+    final String IMPORTE_POR_PESO = VERDE + "Importe por peso (EUR): " + BLANCO;
+    final String IMPORTE_POR_ALTURA = VERDE + "Importe por altura (EUR): " + BLANCO;
+    final String PRECIO_VENTA = VERDE +"Precio de venta (EUR): "+ BLANCO;
+    final String PRECIO_VENTA_DOLARES = VERDE + "Precio de venta (USD): " + BLANCO;
+    final String DESCUENTO_PINTURA = VERDE + "Descuento (10% Pintura EUR): " + BLANCO;
+    final String DESCUENTO_ESCULTURA = VERDE + "Descuento (20% Escultura EUR): " + BLANCO;
     
     private double importePeso;
     private double importeAltura;
@@ -66,7 +66,7 @@ public class obtenerPrecioDeVenta extends modificarObra{
     public void importePorPiezaAdicional(int piezas) {
         if (piezas > 2) {
             for (int i = 3; i <= piezas; i++) {
-                System.out.println(VERDE + "Importe adicional - Pieza " + i + " (euros):" + BLANCO + "10");
+                System.out.println(VERDE + "Importe adicional - Pieza " + i + " (EUR):" + BLANCO + "10");
                 importePiezas += 10;
             }
         }

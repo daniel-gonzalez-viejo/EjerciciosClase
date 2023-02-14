@@ -27,7 +27,6 @@ public class modificarObra extends darDeAltaUnaObraDeArte {
 
     public void modificar(obras aux) {             
             if (aux != null) {
-                aux.setID(insertarID(TAMAÑO_MAXIMO_ID, MENSAJE_ERROR_ID));
                 aux.setTipo(insertarTipo(MENSAJE_ERROR_TIPO));
                 aux.setNombre(insertarNombre());
                 aux.setAutor(insertarAutor());

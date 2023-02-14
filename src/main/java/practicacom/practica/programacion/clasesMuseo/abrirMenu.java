@@ -1,5 +1,4 @@
 package practicacom.practica.programacion.clasesMuseo;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -52,7 +51,7 @@ public class abrirMenu extends verObras{
 
         switch (opcion_menu){ 
             case 1: {
-                System.out.println(P1.Cabeceros());
+                System.out.println(Cabeceros());
                 System.out.println(galería.toStrin());
                 break;
             }  
