@@ -1,6 +1,8 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class obtenerPrecioDeVenta extends modificarObra{
+import practicacom.practica.programacion.clasesMuseo.tipoObra.TIPO_OBRA;
+
+public class obtenerPrecioDeVenta extends modificarObra implements TIPO_OBRA{
 
     final String COMISION_GALERÍA = VERDE + "Comisión de la galería: " + BLANCO;
     final String IMPORTE_POR_PESO = VERDE + "Importe por peso (EUR): " + BLANCO;
@@ -14,7 +16,7 @@ public class obtenerPrecioDeVenta extends modificarObra{
     private double importeAltura;
     private double importePiezas;
     private double descuento;
-    private double precioFinal;
+    private double precio_final;
     private double comision;
 
     public obtenerPrecioDeVenta() {
@@ -35,11 +37,11 @@ public class obtenerPrecioDeVenta extends modificarObra{
             System.out.println(IMPORTE_POR_PESO + importePeso);
             System.out.println(IMPORTE_POR_ALTURA + importeAltura);
             importePorPiezaAdicional(aux.getPiezas());
-            precioFinal = aux.getPrecio() + comision + importePeso + importeAltura + importePiezas;
-            System.out.println(PRECIO_VENTA + precioFinal);
-            conversionADolares(precioFinal);
-            descuentosPorObra(aux.getTipo());
-            System.out.println(PRECIO_VENTA + (precioFinal - descuento));
+            precio_final = aux.getPrecio() + comision + importePeso + importeAltura + importePiezas;
+            System.out.println(PRECIO_VENTA + precio_final);
+            conversionADolares(precio_final);
+            descuentosPorObra(aux);
+            System.out.println(PRECIO_VENTA + (precio_final - descuento));
             System.out.println("");
         } 
 
@@ -77,13 +79,13 @@ public class obtenerPrecioDeVenta extends modificarObra{
         System.out.println(PRECIO_VENTA_DOLARES + precioFinal);
     }
 
-    public void descuentosPorObra(String Tipo) {
-        if (Tipo == "Pintura") {
-            descuento = precioFinal * 0.1;
+    public void descuentosPorObra(obras aux) {
+        if (aux.getTipo().equalsIgnoreCase(TIPO_OBRA.getPintura())) {
+            descuento = precio_final * 0.1;
             System.out.println(DESCUENTO_PINTURA + descuento);
         }
-        else if (Tipo == "Escultura") {
-            descuento = precioFinal * 0.2;
+        else if (aux.getTipo().equalsIgnoreCase(TIPO_OBRA.getEscultura())) {
+            descuento = precio_final * 0.2;
             System.out.println(DESCUENTO_ESCULTURA + descuento);
         }
 
