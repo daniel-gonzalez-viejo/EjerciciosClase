@@ -3,7 +3,11 @@ package practicacom.practica.programacion.clasesMuseo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class obras {
+import practicacom.practica.programacion.clasesMuseo.materialesEscultura.TIPO_MATERIALES_ESCULTURA;
+import practicacom.practica.programacion.clasesMuseo.materialesPintura.TIPO_MATERIALES_PINTURA;
+import practicacom.practica.programacion.clasesMuseo.tipoObra.TIPO_OBRA;
+
+public class obras implements TIPO_OBRA, TIPO_MATERIALES_ESCULTURA, TIPO_MATERIALES_PINTURA{
     final static String ROJO = "\u001B[31m";
     final static String VERDE = "\u001B[32m";
     final static String AMARILLO = "\u001B[33m";
@@ -32,15 +36,6 @@ public class obras {
     final static String MENSAJE_ERROR_ALTURA = ROJO + "La altura debe ser de carácter numérico " + BLANCO;
     final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico " + BLANCO;
     final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico " + BLANCO;
-
-    final static String OPCION_TIPO_PINTURA = "Pintura";
-    final static String OPCION_TIPO_ESCULTURA = "Escultura";
-    final static String OPCION_MATERIAL_ACERO = "Acero";
-    final static String OPCION_MATERIAL_COBRE = "Cobre";
-    final static String OPCION_MATERIAL_HIERRO = "Hierro";
-    final static String OPCION_TECNICA_OLEO = "Oleo";
-    final static String OPCION_TECNICA_ACUARELA = "Acuarela";
-    final static String OPCION_TECNICA_CARBONCILLO = "Carboncillo";
 
     static obras P1 = new obras("1" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
     static obras P2 = new obras("2" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
@@ -95,7 +90,7 @@ public class obras {
     }
 
     public void insertarID() {
-        int contador = 6;
+        int contador = OBRAS_INICIALES.length+1;
         String id = Integer.toString(contador);
         setID(id);
         contador++;
@@ -109,15 +104,20 @@ public class obras {
     }
     public String insertarTipo(String mensaje_error) {
         while (!inserción_exitosa) {
+            boolean error_mostrado = false;
             Scanner sc = new Scanner(System.in);
             System.out.print(TIPO);
             setTipo(sc.nextLine());
-            if (getTipo().equals(OPCION_TIPO_PINTURA) || getTipo().equals(OPCION_TIPO_ESCULTURA)) {
-                inserción_exitosa = true;
-                break;
+            for(String t: TIPO_OBRA.getTipos()){
+                if (t.equals(getTipo())) {    
+                    inserción_exitosa = true;
+                    error_mostrado = true;
+                    break;
+                } 
             }
-            else {
+            if (!error_mostrado) {
                 System.out.println(mensaje_error);
+                error_mostrado = true;
             }
         }
         inserción_exitosa = false;
@@ -235,28 +235,31 @@ public class obras {
         Material = material;
     }
     public String insertarMaterial(String mensaje_error) {
-        if (getTipo().equals(OPCION_TIPO_PINTURA)) {
+        if (getTipo().equals(TIPO_OBRA.getPintura())) {
             setMaterial("   ");
         }
-        else if (getTipo().equals(OPCION_TIPO_ESCULTURA)) {
+        else if (getTipo().equals(TIPO_OBRA.getEscultura())){
             while (!inserción_exitosa) {
+            boolean error_mostrado = false;
             Scanner sc = new Scanner(System.in);
             System.out.print(MATERIAL);
             setMaterial(sc.nextLine());
-                if (getMaterial().equals(OPCION_MATERIAL_ACERO) || getMaterial().equals(OPCION_MATERIAL_COBRE) 
-                    || getMaterial().equals(OPCION_MATERIAL_HIERRO)) {
-                    inserción_exitosa = true;
-                    break;
+                for(String m: TIPO_MATERIALES_ESCULTURA.getMateriales()){
+                    if (m.equals(getMaterial())) {
+                        inserción_exitosa = true;
+                        error_mostrado = true;
+                        break;
+                    }
                 }
-                else {
+                if (!error_mostrado) {
                     System.out.println(mensaje_error);
-                }
+                    error_mostrado = true;
+                }  
             }
             inserción_exitosa = false;
         }
         return getMaterial();
     }
-
     public String getTécnica() {
         return Técnica;
     }
@@ -264,22 +267,26 @@ public class obras {
         Técnica = técnica;
     }
     public String insertarTecnica(String mensaje_error) {
-        if (getTipo().equals(OPCION_TIPO_ESCULTURA)) {
+        if (getTipo().equals(TIPO_OBRA.getEscultura())) {
             setTécnica("   ");
         }
-        else if (getTipo().equals(OPCION_TIPO_PINTURA)) {
+        else if (getTipo().equals(TIPO_OBRA.getPintura())) {
+            boolean error_mostrado = false;
             while (!inserción_exitosa) {
             Scanner sc = new Scanner(System.in);
             System.out.print(TÉCNICA);
             setTécnica(sc.nextLine());
-                if (getTécnica().equals(OPCION_TECNICA_ACUARELA) || getTécnica().equals(OPCION_TECNICA_CARBONCILLO) 
-                    || getTécnica().equals(OPCION_TECNICA_OLEO)) {
-                    inserción_exitosa = true;
-                    break;
+                for(String m: TIPO_MATERIALES_PINTURA.getMateriales()){
+                    if (m.equals(getTécnica())) {
+                        inserción_exitosa = true;
+                        error_mostrado = true;
+                        break;
+                    }
                 }
-                else {
+                if (!error_mostrado) {
                     System.out.println(mensaje_error);
-                }
+                    error_mostrado = true;
+                }  
             }
             inserción_exitosa = false;
         }
