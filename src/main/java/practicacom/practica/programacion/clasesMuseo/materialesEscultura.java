@@ -20,7 +20,7 @@ public class materialesEscultura {
         return MATERIALES;
     }
 
-    interface TIPO_MATERIALES {
+    interface TIPO_MATERIALES_ESCULTURA {
         public static String getAcero() {
             return ACERO;
         }
