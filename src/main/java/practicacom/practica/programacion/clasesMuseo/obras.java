@@ -37,11 +37,11 @@ public class obras implements TIPO_OBRA, TIPO_MATERIALES_ESCULTURA, TIPO_MATERIA
     final static String MENSAJE_ERROR_PESO = ROJO + "El peso debe ser de carácter numérico " + BLANCO;
     final static String MENSAJE_ERROR_PIEZAS = ROJO + "La cantidad de piezas debe ser de carácter numérico " + BLANCO;
 
-    static obras P1 = new obras("1" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , "    " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
-    static obras P2 = new obras("2" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
-    static obras P3 = new obras("3" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , "    " ,   "Óleo" , 5 , "Óleo");
-    static obras P4 = new obras("4" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , "    " , "Óleo" , 5 , "Óleo");
-    static obras P5 = new obras("5" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "acero" , "    " ,  5 , "Escultura");
+    static obras P1 = new obras("1" , "Pintura", "Guernica", "P.Picasso" , 1000 , 5 , 2 , " " ,   "Óleo" , 5 , "Cuadro de la guerra civil");
+    static obras P2 = new obras("2" , "Pintura", "La Vie" , "P.Picasso" , 200 , 5 , 1 , " " , "Óleo" , 5 , "Óleo");
+    static obras P3 = new obras("3" , "Pintura", "El Sueño" , "P.Picasso" , 300 , 5 , 1.3 , " " ,   "Óleo" , 5 , "Óleo");
+    static obras P4 = new obras("4" , "Pintura", "Retrato.D Maar" , "P.Picasso" , 400 , 5 , 1 , " " , "Óleo" , 5 , "Óleo");
+    static obras P5 = new obras("5" , "Escultura", "El piel roja" , "U.Chueca" , 350 , 5 , 1 , "Acero" , " " ,  5 , "Escultura");
 
     static boolean inserción_exitosa = false;    
 
@@ -333,24 +333,33 @@ public class obras implements TIPO_OBRA, TIPO_MATERIALES_ESCULTURA, TIPO_MATERIA
     }
 
     public static String Cabeceros() {
-        String s = ROJO + "ID" + "      " + "NOMBRE" + BLANCO;
-        System.out.println(s);
+        String separador = CYAN + "| %1s | %9s | %15s | %10s | %10s | %10s | %10s | %10s |%10s | %5s | %30s |%n" + BLANCO;
 
-        System.out.println(VERDE + "___________________________________________");
+        String s = String.format(separador,
+        "ID", "TIPO", "NOMBRE", "AUTOR", "PRECIO", "ALTURA", "PESO", "MATERIAL", "TÉCNICA", "PIEZAS", "DESCRIPCIÓN" 
+        );
+        System.out.printf(s);
+
+        System.out.println(CYAN + "_____________________________________________________________________________________________________________________________________________________________" + BLANCO);
         return  "";
     }
     
 
+
     @Override
     public String toString() {
+        String separador = "| %1s  | %9s | %15s | %10s | %10.2f | %10.2f | %10.2f | %10s | %10s | %5d | %30s |%n";
         
-        String s = ROJO + id + VERDE + "  |" +BLANCO + "    " + Nombre;
-        System.out.println(s);
+        String s = String.format(separador, 
+        id, Tipo, Nombre.length() > 15 ? Nombre.substring(0, 15) : Nombre, 
+        Autor, Precio, Altura, Peso, Material, Técnica, Piezas, 
+        Descripción.length() > 30 ? Descripción.substring(0, 25) : Descripción
+    );
+
+        System.out.printf(s);
         
         return "";
     }
-
-    
 
     
     
