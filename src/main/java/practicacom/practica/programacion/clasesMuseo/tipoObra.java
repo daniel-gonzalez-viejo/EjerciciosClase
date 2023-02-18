@@ -9,7 +9,7 @@ public class tipoObra {
     public static String getPintura() {
         return PINTURA;
     }
-    public static String getObra() {
+    public static String getEscultura() {
         return ESCULTURA;
     }
     public static String[] getTipos() {
@@ -21,7 +21,7 @@ public class tipoObra {
         public static String getPintura() {
             return PINTURA;
         }
-        public static String getObra() {
+        public static String getEscultura() {
             return ESCULTURA;
         } 
         public static String[] getTipos() {
