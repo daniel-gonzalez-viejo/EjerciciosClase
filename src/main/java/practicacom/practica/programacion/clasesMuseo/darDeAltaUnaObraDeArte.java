@@ -1,7 +1,5 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-import java.util.Scanner;
-
 public class darDeAltaUnaObraDeArte extends verObras{
 
     public darDeAltaUnaObraDeArte() {
