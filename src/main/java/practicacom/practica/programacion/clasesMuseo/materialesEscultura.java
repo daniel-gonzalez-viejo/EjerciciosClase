@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class materialesEscultura {
+public abstract class materialesEscultura {
     protected final static String ACERO = "Acero";
     protected final static String COBRE = "Cobre";
     protected final static String HIERRO = "Hierro";

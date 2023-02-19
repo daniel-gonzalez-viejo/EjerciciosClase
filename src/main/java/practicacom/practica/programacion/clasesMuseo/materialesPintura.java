@@ -1,6 +1,6 @@
 package practicacom.practica.programacion.clasesMuseo;
 
-public class materialesPintura {
+public abstract class materialesPintura {
     final static String OLEO = "Oleo";
     final static String ACUARELA = "Acuarela";
     final static String CARBONCILLO = "Carboncillo";
